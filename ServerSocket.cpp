@@ -13,7 +13,7 @@ void ServerSocket::run() {
         throw string("Error: could not creating socket.");
     }
     if (!bind_kernel()){
-        throw string("Error: could not binding kernel.");
+        throw string("Error: could not bind kernel.");
     }
     while(true){
         dataSocket data;
