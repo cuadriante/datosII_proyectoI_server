@@ -18,9 +18,10 @@ void ServerSocket::run() {
     while(true){
         dataSocket data;
         socklen_t size = sizeof(data.info);
+        cout << "Waiting for client to connect." << endl;
         data.descriptor = accept(descriptor, (sockaddr *)&data.info, &size);
         if(data.descriptor < 0){
-            cout << "Error: could not accept client.";
+            cout << "Error: could not accept client." << endl;
             break;
         }
         else {

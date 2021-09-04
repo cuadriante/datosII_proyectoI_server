@@ -7,6 +7,7 @@ void * serverRun(void *){
     } catch (string ex) {
         cout << ex << endl;
     }
+    pthread_exit(NULL);
 }
 
 int main() {
