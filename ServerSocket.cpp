@@ -83,8 +83,7 @@ void *ServerSocket::ClientController(void *obj) {
             }
         }
         cout << message << endl;
-        close(data->descriptor);
-        pthread_exit(NULL);
     }
-
+    close(data->descriptor);
+    pthread_exit(NULL);
 }
