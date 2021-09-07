@@ -26,7 +26,7 @@ void ServerSocket::run() {
         }
         else {
             clients.push_back(data.descriptor);
-            cout << "Client connected successfully.";
+            cout << "Client connected successfully." << endl;
             pthread_t thread;
             pthread_create(&thread, 0, ServerSocket::ClientController, (void *)&data);
             pthread_detach(thread);
@@ -86,5 +86,6 @@ void *ServerSocket::ClientController(void *obj) {
         close(data->descriptor);
         pthread_exit(NULL);
     }
+
 
 }
