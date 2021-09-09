@@ -1,0 +1,14 @@
+//
+// Created by cuadriante on 8/9/21.
+//
+
+#ifndef DATOSII_PROYECTOI_SERVER_BLOCKLIST_H
+#define DATOSII_PROYECTOI_SERVER_BLOCKLIST_H
+
+
+class BlockList {
+
+};
+
+
+#endif //DATOSII_PROYECTOI_SERVER_BLOCKLIST_H
