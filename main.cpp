@@ -1,4 +1,11 @@
 #include "ServerSocket.h"
+#include <sstream>
+#include <map>
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree//json_parser.hpp>#include <sstream>
+#include <map>
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree//json_parser.hpp>
 
 ServerSocket* server;
 void * serverRun(void *){
@@ -17,7 +24,7 @@ int main() {
     pthread_detach(serverThread);
 
     //Test: send messages from server to client
-    string json = "Holi soy el servidor."; // !! esto es lo que hay que poner como un json de verdad proximamente
+    string json = "start"; // !! esto es lo que hay que poner como un json de verdad proximamente
     while(1){
         string msn;
         cin >> msn;
