@@ -26,7 +26,8 @@ public:
     Protocol(ServerSocket * server);
     void objectToPtree(string obj);
     void ptreeToJson(ptree ptree1);
-    void sendJsonToClient(string json);
+    void sendStringToSocket(string json);
+    string receiveStringFromSocket(string json);
 
 };
 

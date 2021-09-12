@@ -27,6 +27,11 @@ void ServerSocket::run() {
         else {
             clients.push_back(data.descriptor);
             cout << "Client connected successfully." << endl;
+            for (int i = 0; i < 2; i++){
+                this->sendMessage(data.descriptor, "prueba");
+                cout << "message sent to client" << endl;
+            }
+
             pthread_t thread;
             pthread_create(&thread, 0, ServerSocket::ClientController, (void *)&data);
             pthread_detach(thread);
@@ -36,12 +41,26 @@ void ServerSocket::run() {
 
 }
 
-void ServerSocket::setMessage(const char *msn) {
+void ServerSocket::sendMessageToAll(const char *msn) {
     int i;
     for(int i = 0; i < clients.size(); i++){ // sends message to all clients
         send(clients[i], msn, strlen(msn), 0);
     }
 }
+
+void ServerSocket::sendMessage(int id, const char *msn) {
+    send(id, msn, strlen(msn), 0);
+}
+
+string ServerSocket::readMessage() {
+    char buffer[bufferSize] = {0};
+    for (int i = 0; i < clients.size(); i++){
+        read(clients[i], buffer, bufferSize);
+    }
+    return buffer;
+}
+
+
 
 bool ServerSocket::create_socket() {
     // create descriptor
@@ -89,3 +108,4 @@ void *ServerSocket::ClientController(void *obj) {
 
 
 }
+

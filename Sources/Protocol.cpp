@@ -4,6 +4,10 @@
 
 #include "../Headers/Protocol.h"
 
+Protocol::Protocol(ServerSocket *server) {
+    serverSocket = server;
+}
+
 void Protocol::objectToPtree(string obj) {
     ptree pt;
     pt.put("object", obj);
@@ -15,15 +19,15 @@ void Protocol::ptreeToJson(ptree ptree1) {
     write_json(buff, ptree1, false);
     string json = buff.str();
     cout << json << endl;
-    sendJsonToClient(json);
-
+    sendStringToSocket(json);
 }
 
-void Protocol::sendJsonToClient(string json) {
-        serverSocket->setMessage(json.c_str());
-
+void Protocol::sendStringToSocket(string json) {
+    serverSocket->sendMessageToAll(json.c_str());
 }
 
-Protocol::Protocol(ServerSocket *server) {
-    serverSocket = server;
+string Protocol::receiveStringFromSocket(string json) {
+
+        return serverSocket->readMessage();
+
 }

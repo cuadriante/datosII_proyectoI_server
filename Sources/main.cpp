@@ -30,16 +30,19 @@ int main() {
 
     //Test: send messages from server to client
     string json = "start"; // !! esto es lo que hay que poner como un command de verdad proximamente
-    protocol.objectToPtree(json);
-//    while(1){
-//        string msn;
-//        cin >> msn;
+    //protocol.objectToPtree(json);
+    while(1){
+
+        string msn;
+        cin >> msn;
+
+ //       protocol.objectToPtree(json);
 //        if(msn == "exit"){
 //            break;
 //        }
-//        server->setMessage(json.c_str());
-//
-//    }
+//        server->sendMessageToAll(json.c_str());
+
+    }
     delete server;
     return 0;
 }

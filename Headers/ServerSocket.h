@@ -26,7 +26,8 @@ class ServerSocket {
 public:
     ServerSocket();
     void run();
-    void setMessage(const char* msn);
+    void sendMessageToAll(const char *msn);
+    string readMessage();
 
 private:
     int descriptor; // se utiliza para identificar los sistemas
@@ -37,6 +38,8 @@ private:
     bool create_socket();
     bool bind_kernel(); //bind with port, establish maximum client quantity
     static void* ClientController(void*);
+
+    void sendMessage(int id, const char *msn);
 };
 
 
