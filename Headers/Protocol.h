@@ -10,7 +10,7 @@
 #include <map>
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree//json_parser.hpp>
-#include "ServerSocket.h"
+#include "Socket.h"
 
 using namespace std;
 using boost::property_tree::ptree;
@@ -18,17 +18,16 @@ using boost::property_tree::read_json;
 using boost::property_tree::write_json;
 
 class Protocol {
-private:
-
-    ServerSocket * serverSocket;
 
 public:
-    Protocol(ServerSocket * server);
+    Protocol();
+
     void objectToPtree(string obj);
-    void ptreeToJson(ptree ptree1);
+    string ptreeToJson(ptree ptree1);
     void sendStringToSocket(string json);
     string receiveStringFromSocket(string json);
 
+    ptree* JsonToPtree(string json);
 };
 
 

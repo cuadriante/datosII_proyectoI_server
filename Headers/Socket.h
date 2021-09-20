@@ -2,8 +2,8 @@
 // Created by cuadriante on 2/9/21.
 //
 
-#ifndef DATOSII_PROYECTOI_SERVER_SERVERSOCKET_H
-#define DATOSII_PROYECTOI_SERVER_SERVERSOCKET_H
+#ifndef DATOSII_PROYECTOI_SERVER_SOCKET_H
+#define DATOSII_PROYECTOI_SERVER_SOCKET_H
 
 #include <sys/socket.h>
 #include <sys/types.h>
@@ -14,20 +14,23 @@
 #include <pthread.h> // threads for multiprogramming
 #include <vector> //para almacenar varios clientes
 #include <unistd.h>
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree//json_parser.hpp>
+
 using namespace std;
+using boost::property_tree::ptree;
+using boost::property_tree::read_json;
+using boost::property_tree::write_json;
 
-//Structure to represent clients
-struct dataSocket{
-    int descriptor;
-    sockaddr_in info;
-};
-
-class ServerSocket {
+class Socket {
+private:
+    int socketId;
 public:
-    ServerSocket();
-    void run();
-    void sendMessageToAll(const char *msn);
+    Socket(int socketId);
     string readMessage();
+    void sendMessage(string message);
+    void sendPtree(ptree * ptree);
+    ptree * readPtree();
 
 private:
     int descriptor; // se utiliza para identificar los sistemas
@@ -39,8 +42,8 @@ private:
     bool bind_kernel(); //bind with port, establish maximum client quantity
     static void* ClientController(void*);
 
-    void sendMessage(int id, const char *msn);
+
 };
 
 
-#endif //DATOSII_PROYECTOI_SERVER_SERVERSOCKET_H
+#endif //DATOSII_PROYECTOI_SERVER_SOCKET_H
