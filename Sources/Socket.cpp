@@ -37,3 +37,25 @@ ptree * Socket::readPtree() {
 
 }
 
+void Socket::sendCommand(Command &command) {
+    ptree * pt = new ptree();
+    pt->put("action", command.getAction());
+    pt->put("id", command.getId());
+    pt->put("posX", command.getPosX());
+    pt->put("posY", command.getPosY());
+    pt->put("type", command.getType());
+    pt->put("name", command.getName());
+    sendPtree(pt);
+}
+
+Command * Socket::readCommand(){
+    ptree * pt = readPtree();
+    if (pt == NULL){
+        return NULL;
+    }
+    Command * c = new Command();
+    c->setAction(pt->get<int>("action", 0));
+    c->setId(pt->get<int>("id", 0));
+    c->
+}
+

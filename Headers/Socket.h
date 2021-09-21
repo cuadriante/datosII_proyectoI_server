@@ -16,6 +16,7 @@
 #include <unistd.h>
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree//json_parser.hpp>
+#include "Command.h"
 
 using namespace std;
 using boost::property_tree::ptree;
@@ -30,6 +31,7 @@ public:
     string readMessage();
     void sendMessage(string message);
     void sendPtree(ptree * ptree);
+    void sendCommand(Command &command);
     ptree * readPtree();
 
 private:

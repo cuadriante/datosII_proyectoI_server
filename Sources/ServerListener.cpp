@@ -4,6 +4,9 @@
 
 #include "../Headers/ServerListener.h"
 #include "../Headers/Socket.h"
+#include "../Headers/Command.h"
+#include "../Headers/Breakout/Block.h"
+#include "../Headers/Breakout/Game.h"
 
 bool ServerListener::start(){
     // create descriptor
@@ -64,11 +67,30 @@ void * ServerListener::startClientSession(void * psocketId) {
     cout << "socketId: " << socketId << endl;
 
     Socket socket = Socket(*socketId);
-    sleep(1);
+
+    for (Block * b : GAME_SINGLETON.getBlockList()){
+        Command c;
+        c.setAction(c.ACTION_CREATE_BLOCK);
+        c.setId(b->getId());
+        c.setPosX(b->getPosX());
+        c.setPosY(b->getPosY());
+        socket.sendCommand(c);
+    }
 
 
+//    ptree pt;
+//
+//    Command command;
+//    command.setAction(command.Action_c);
+//    command.setPosX(200);
+//    command.writeToPtree(&pt);
+//    pt.put("id", *socketId);
+//    pt.put("bobobo", "buup");
+//    pt.put("posx", "230");
+//    socket.sendPtree(&pt);
 
-    socket.sendMessage("juajua");
+    sleep(3);
+    //socket.sendMessage("juajua");
 
 
 
