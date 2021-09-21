@@ -17,6 +17,7 @@
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree//json_parser.hpp>
 #include "Command.h"
+#include <chrono>
 
 using namespace std;
 using boost::property_tree::ptree;
@@ -45,6 +46,7 @@ private:
     static void* ClientController(void*);
 
 
+    Command *readCommand();
 };
 
 

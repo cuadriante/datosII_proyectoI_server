@@ -61,3 +61,10 @@ int Command::getId() const {
 void Command::setId(int id) {
     Command::id = id;
 }
+
+void Command::evaluate(string variable) {
+
+
+
+
+}

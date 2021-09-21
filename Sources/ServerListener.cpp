@@ -2,6 +2,7 @@
 // Created by cuadriante on 14/9/21.
 //
 
+#include <thread>
 #include "../Headers/ServerListener.h"
 #include "../Headers/Socket.h"
 #include "../Headers/Command.h"
@@ -75,6 +76,7 @@ void * ServerListener::startClientSession(void * psocketId) {
         c.setPosX(b->getPosX());
         c.setPosY(b->getPosY());
         socket.sendCommand(c);
+        this_thread::sleep_for(chrono::milliseconds(1));
     }
 
 

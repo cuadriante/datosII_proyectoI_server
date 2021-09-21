@@ -30,10 +30,15 @@ void Socket::sendPtree(ptree *ptree) {
 
 ptree * Socket::readPtree() {
     string json = readMessage();
-    ptree pt;
+    if (json.empty()){
+        return NULL;
+    }
+    //cout << json << endl;
+    //json = "{\"action\":\"1\",\"posX\":\"200\"}";
+    ptree * pt = new ptree();
     istringstream is (json);
-    read_json (is, pt);
-    return &pt;
+    read_json (is, *pt);
+    return pt;
 
 }
 
@@ -44,7 +49,7 @@ void Socket::sendCommand(Command &command) {
     pt->put("posX", command.getPosX());
     pt->put("posY", command.getPosY());
     pt->put("type", command.getType());
-    pt->put("name", command.getName());
+    //pt->put("name", command.getName());
     sendPtree(pt);
 }
 
@@ -56,6 +61,10 @@ Command * Socket::readCommand(){
     Command * c = new Command();
     c->setAction(pt->get<int>("action", 0));
     c->setId(pt->get<int>("id", 0));
-    c->
+    c->setPosX(pt->get<int>("posX", 0));
+    c->setPosY(pt->get<int>("posY", 0));
+    //c->setName(pt->get<string>("name", 0));
+    return c;
 }
+
 
