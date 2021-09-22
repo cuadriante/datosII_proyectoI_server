@@ -26,13 +26,14 @@ string Socket::readMessage() {
     }
     output.resize(bytes_received);
     buffer.append(output);
+    output[bytes_received] = 0;
     int pos = buffer.find("\n");
     if (pos >= 0) {
         string msg = buffer.substr(0, pos);
-        buffer.erase(0, pos);
+        buffer.erase(0, pos + 1);
         return msg;
     }
-    //output[bytes_received] = 0;
+
     return "";
 }
 
