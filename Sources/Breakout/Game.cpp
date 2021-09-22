@@ -6,18 +6,18 @@
 
 Game::Game() {
     int id = 0;
-    int x = 0;
+    int x = 7;
     int y = 0;
     Block * block = new Block(id++, 31, x, y);
     blockList.push_back(block);
-    for (int row = 0; row < 5; row++){
-        for(int col = 0; col < 12; col++){
+    for (int row = 0; row < 12; row++){
+        for(int col = 0; col < 5; col++){
             Block * block = new Block(id++, 31, x, y);
             blockList.push_back(block);
-            x = x + 20;
+            x = x + 120;
         }
-        x = 0;
-        y = y + 5;
+        x = 7;
+        y = y + 20;
     }
 
 }

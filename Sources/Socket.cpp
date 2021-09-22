@@ -10,7 +10,7 @@ Socket::Socket(int socketId) {
 }
 
 void Socket::sendMessage(string message) {
-    message.append("\n");
+    //message.append("\n");
     send(socketId, message.c_str(), message.size(), 0);
 }
 
