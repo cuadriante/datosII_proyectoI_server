@@ -10,15 +10,30 @@ Socket::Socket(int socketId) {
 }
 
 void Socket::sendMessage(string message) {
+    message.append("\n");
     send(socketId, message.c_str(), message.size(), 0);
 }
 
 string Socket::readMessage() {
-    char buffer[bufferSize] = {0};
-    for (int i = 0; i < clients.size(); i++){
-        read(clients[i], buffer, bufferSize);
+    //char buffer[bufferSize] = {0}; //number to be defined
+    string output(bufferSize, 0);
+
+
+    int bytes_received = read(socketId, &output[0], bufferSize-1);
+    if (bytes_received<0) {
+        cout << "Failed to read message." << endl;
+        return "";
     }
-    return buffer;
+    output.resize(bytes_received);
+    buffer.append(output);
+    int pos = buffer.find("\n");
+    if (pos >= 0) {
+        string msg = buffer.substr(0, pos);
+        buffer.erase(0, pos);
+        return msg;
+    }
+    //output[bytes_received] = 0;
+    return "";
 }
 
 void Socket::sendPtree(ptree *ptree) {

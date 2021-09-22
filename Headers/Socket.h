@@ -25,8 +25,7 @@ using boost::property_tree::read_json;
 using boost::property_tree::write_json;
 
 class Socket {
-private:
-    int socketId;
+
 public:
     Socket(int socketId);
     string readMessage();
@@ -36,8 +35,10 @@ public:
     ptree * readPtree();
 
 private:
+    int socketId;
     int descriptor; // se utiliza para identificar los sistemas
     const int maxConnectedClients = 4;
+    string buffer;
     static const int bufferSize = 1024;
     sockaddr_in info;
     vector<int> clients; // stores connected clients

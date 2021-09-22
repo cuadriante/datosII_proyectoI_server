@@ -69,35 +69,23 @@ void * ServerListener::startClientSession(void * psocketId) {
 
     Socket socket = Socket(*socketId);
 
-    for (Block * b : GAME_SINGLETON.getBlockList()){
-        Command c;
-        c.setAction(c.ACTION_CREATE_BLOCK);
-        c.setId(b->getId());
-        c.setPosX(b->getPosX());
-        c.setPosY(b->getPosY());
-        socket.sendCommand(c);
-        this_thread::sleep_for(chrono::milliseconds(1));
+    bool exit = false;
+
+    while (!exit) {
+        for (Block * b : GAME_SINGLETON.getBlockList()){
+            Command c;
+            c.setAction(c.ACTION_CREATE_BLOCK);
+            c.setId(b->getId());
+            c.setPosX(b->getPosX());
+            c.setPosY(b->getPosY());
+            socket.sendCommand(c);
+            this_thread::sleep_for(chrono::milliseconds(100));
+            //sleep(3);
+        }
+        sleep(1000);
     }
 
-
-//    ptree pt;
-//
-//    Command command;
-//    command.setAction(command.Action_c);
-//    command.setPosX(200);
-//    command.writeToPtree(&pt);
-//    pt.put("id", *socketId);
-//    pt.put("bobobo", "buup");
-//    pt.put("posx", "230");
-//    socket.sendPtree(&pt);
-
-    sleep(3);
-    //socket.sendMessage("juajua");
-
-
-
-
     close(*socketId);
-    pthread_exit(NULL);
+   // pthread_exit(NULL);
 
 }
