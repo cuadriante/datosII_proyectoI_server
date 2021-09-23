@@ -86,10 +86,21 @@ void * ServerListener::startClientSession(void * psocketId) {
             c.setPosX(b->getPosX());
             c.setPosY(b->getPosY());
             socket.sendCommand(c);
-            this_thread::sleep_for(chrono::milliseconds(100));
+            //this_thread::sleep_for(chrono::milliseconds(100));
             //sleep(3);
         }
+
+        Command c2;
+        c2.setAction(c2.ACTION_MOVE_BALL);
+        c2.setPosX(GAME_SINGLETON.getBall()->getX());
+        c2.setPosY(GAME_SINGLETON.getBall()->getY());
+
+        socket.sendCommand(c2);
+
+
+
         sleep(1000);
+
     }
 
     close(*socketId);

@@ -20,10 +20,18 @@ Game::Game() {
         y = y + 20;
     }
 
+    ball = new Ball();
+    ball->setX(300);
+    ball->setY(300);
+
 }
 
 
 const vector<Block *> & Game::getBlockList() const {
     return blockList;
+}
+
+Ball *Game::getBall() const {
+    return ball;
 }
 

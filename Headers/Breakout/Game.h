@@ -7,6 +7,7 @@
 
 
 #include "Block.h"
+#include "Ball.h"
 #include <vector>
 
 using namespace std;
@@ -14,6 +15,7 @@ using namespace std;
 class Game {
 private:
     vector<Block *> blockList;
+    Ball * ball;
 
 public:
     Game();
@@ -21,6 +23,8 @@ public:
     const vector<Block *> & getBlockList() const;
 
     void setBlockList(const vector<Block> &blockList);
+
+    Ball *getBall() const;
 };
 
 static Game GAME_SINGLETON;
