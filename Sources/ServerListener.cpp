@@ -8,6 +8,7 @@
 #include "../Headers/Command.h"
 #include "../Headers/Breakout/Block.h"
 #include "../Headers/Breakout/Game.h"
+#include <fcntl.h>
 
 bool ServerListener::start(){
     // create descriptor
@@ -55,6 +56,12 @@ void ServerListener::waitForConnections() {
         else {
             //clients.push_back(data.descriptor);
             cout << "Client connected successfully." << endl;
+
+            // Put the socket in non-blocking mode:
+            if(fcntl(clientSocketId, F_SETFL, fcntl(clientSocketId, F_GETFL) | O_NONBLOCK) < 0) {
+                // handle error
+                cout << "Error: Socket is nonblocking.";
+            }
 
             pthread_t thread;
             pthread_create(&thread, 0, ServerListener::startClientSession, (void *)&clientSocketId);
