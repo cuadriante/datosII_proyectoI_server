@@ -85,6 +85,7 @@ void * ServerListener::startClientSession(void * psocketId) {
             c.setId(b->getId());
             c.setPosX(b->getPosX());
             c.setPosY(b->getPosY());
+            c.setType(b->getType());
             socket.sendCommand(c);
             //this_thread::sleep_for(chrono::milliseconds(100));
             //sleep(3);

@@ -43,6 +43,7 @@ public:
     int getType() const;
     int getPosY() const;
     void setPosY(int posY);
+    void setType(int type);
     const string &getName() const;
     void setName(const string &name);
     void evaluate(string variable);

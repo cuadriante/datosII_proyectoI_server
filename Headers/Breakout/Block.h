@@ -31,6 +31,8 @@ public:
 
     void setPosy(int posy);
 
+    int getType() const;
+
 };
 
 

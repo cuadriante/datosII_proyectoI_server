@@ -41,3 +41,7 @@ void Block::setPosy(int posy) {
     Block::posy = posy;
 }
 
+int Block::getType() const {
+    return type;
+}
+

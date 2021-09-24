@@ -68,3 +68,7 @@ void Command::evaluate(string variable) {
 
 
 }
+
+void Command::setType(int type) {
+    Command::type = type;
+}
