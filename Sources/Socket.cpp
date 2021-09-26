@@ -70,6 +70,7 @@ void Socket::sendCommand(Command &command) {
     pt->put("posY", command.getPosY());
     pt->put("type", command.getType());
     //pt->put("name", command.getName());
+    pt->put("size", command.getSize());
     sendPtree(pt);
 }
 
@@ -84,6 +85,7 @@ Command * Socket::readCommand(){
     c->setPosX(pt->get<int>("posX", 0));
     c->setPosY(pt->get<int>("posY", 0));
     //c->setName(pt->get<string>("name", 0));
+    c->setSize(pt->get<int>("size", 0));
     return c;
 }
 

@@ -4,6 +4,10 @@
 
 #include "../Headers/PlayerInfo.h"
 
+PlayerInfo::PlayerInfo() {
+    playerBar = new PlayerBar();
+}
+
 int PlayerInfo::getSocketId() const {
     return socketId;
 }
@@ -27,3 +31,9 @@ void *PlayerInfo::getGameInfo() const {
 void PlayerInfo::setGameInfo(void *gameInfo) {
     PlayerInfo::gameInfo = gameInfo;
 }
+
+PlayerBar *PlayerInfo::getPlayerBar() const {
+    return playerBar;
+}
+
+

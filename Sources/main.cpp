@@ -9,7 +9,7 @@ long currentTimeInMillis(){
 
 [[noreturn]] void * gameLoop(void * pgame){
     GameInfo * gameInfo = (GameInfo *)pgame;
-    const int ballUpdateIntervalInMilli = 20;
+    const int ballUpdateIntervalInMilli = 150;
     long ballLastUpdated = 0;
 
     while (true){

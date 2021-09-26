@@ -16,6 +16,7 @@ class Command {
 public:
     static const int ACTION_NONE = 0;
     // to player
+    static const int ACTION_CREATE_PLAYER = 10;
     static const int ACTION_MOVE_PLAYER = 11;
     static const int ACTION_MOVE_BALL = 12;
     static const int ACTION_MOVE_BLOCK = 13;
@@ -64,6 +65,11 @@ private:
     int posY;
     string name;
     int type;
+    int size;
+public:
+    int getSize() const;
+
+    void setSize(int size);
 
 };
 

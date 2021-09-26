@@ -72,3 +72,11 @@ void Command::evaluate(string variable) {
 void Command::setType(int type) {
     Command::type = type;
 }
+
+int Command::getSize() const {
+    return size;
+}
+
+void Command::setSize(int size) {
+    Command::size = size;
+}

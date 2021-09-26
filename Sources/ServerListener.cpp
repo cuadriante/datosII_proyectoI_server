@@ -109,6 +109,44 @@ bool ServerListener::start() {
                     c.setPosY(gameInfo->getBall()->getY());
 
                     socket.sendCommand(c);
+
+                    c.setAction(c.ACTION_MOVE_PLAYER);
+                    c.setPosX(300);
+                    c.setPosY(550);
+                    c.setSize(100);
+
+                    socket.sendCommand(c);
+                    break;
+                }
+                case (Command::ACTION_MOVE_LEFT): {
+                    cout << "left" << endl;
+                    int x = playerInfo->getPlayerBar()->getPosX() - 10;
+                    if (x < 0) {
+                        x = 0;
+                    }
+                    playerInfo->getPlayerBar()->setPosX(x);
+                    Command c;
+                    c.setAction(c.ACTION_MOVE_PLAYER);
+                    c.setPosX(x);
+                    c.setPosY(playerInfo->getPlayerBar()->getPosY());
+                    c.setSize(playerInfo->getPlayerBar()->getSize());
+                    socket.sendCommand(c);
+                    break;
+                }
+                case (Command::ACTION_MOVE_RIGHT): {
+                    cout << "right" << endl;
+                    int x = playerInfo->getPlayerBar()->getPosX() + 10;
+                    if (x > 600) {
+                        x = 600;
+                    }
+                    playerInfo->getPlayerBar()->setPosX(x);
+                    Command c;
+                    c.setAction(c.ACTION_MOVE_PLAYER);
+                    c.setPosX(x);
+                    c.setPosY(playerInfo->getPlayerBar()->getPosY());
+                    c.setSize(playerInfo->getPlayerBar()->getSize());
+                    socket.sendCommand(c);
+                    break;
                 }
             }
         }
