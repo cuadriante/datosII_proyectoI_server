@@ -23,8 +23,11 @@ public:
     static const int ACTION_SET_SCORE = 15;
     static const int ACTION_CREATE_BLOCK = 16;
     // to server
+    static const int ACTION_START_GAME = 20;
     static const int ACTION_MOVE_LEFT = 21;
     static const int ACTION_MOVE_RIGHT = 22;
+    static const int ACTION_END_GAME = 23;
+
     // block types
     static const int BLOCK_TYPE_COMMON = 31;
     static const int BLOCK_TYPE_DOUBLE = 32;

@@ -7,13 +7,14 @@
 #include "../Headers/Socket.h"
 #include "../Headers/Command.h"
 #include "../Headers/Breakout/Block.h"
-#include "../Headers/Breakout/Game.h"
+#include "../Headers/Breakout/GameInfo.h"
 #include <fcntl.h>
 
-bool ServerListener::start(){
+
+bool ServerListener::start() {
     // create descriptor
     serverSocketId = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
-    if (serverSocketId <= 0){
+    if (serverSocketId <= 0) {
         cout << "Error: Could not create socket" << endl;
         return false;
     }
@@ -21,21 +22,22 @@ bool ServerListener::start(){
     int opt = 1;
 
     if (setsockopt(serverSocketId, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT, &opt, sizeof(opt))) {
-      cout << "Error: Could not set socket options." << endl;
-      return false;
+        cout << "Error: Could not set socket options." << endl;
+        return false;
     }
 
     serverSocketInfo.sin_family = AF_INET;
     serverSocketInfo.sin_addr.s_addr = INADDR_ANY; // accepts anything
     serverSocketInfo.sin_port = htons(serverSocketPort);
-    memset(&serverSocketInfo.sin_zero, 0, sizeof(serverSocketInfo.sin_zero)); //used to clean attribute, access directly to its direction
+    memset(&serverSocketInfo.sin_zero, 0,
+           sizeof(serverSocketInfo.sin_zero)); //used to clean attribute, access directly to its direction
 
-    if((bind(serverSocketId, (struct sockaddr *)&serverSocketInfo, sizeof(serverSocketInfo)) < 0)){
+    if ((bind(serverSocketId, (struct sockaddr *) &serverSocketInfo, sizeof(serverSocketInfo)) < 0)) {
         cout << "Error: Could not bind." << endl;
         return false;
     }
 
-    if (listen(serverSocketId, maxConnectedClients)){
+    if (listen(serverSocketId, maxConnectedClients)) {
         cout << "Error: Listen unsuccessful." << endl;
         return false;
     }
@@ -45,66 +47,75 @@ bool ServerListener::start(){
 
 }
 
-void ServerListener::waitForConnections() {
-    while(true){
+[[noreturn]] void ServerListener::waitForConnections(GameInfo *gameInfo) {
+    while (true) {
         cout << "Waiting for client to connect." << endl;
-        int clientSocketId = accept(serverSocketId, (struct sockaddr *)&serverSocketInfo, (socklen_t *)&serverSocketInfoLen);
-        if(clientSocketId< 0){
-            cout << "Error: could not accept client." << endl;
-            break;
-        }
-        else {
+        int clientSocketId = accept(serverSocketId, (struct sockaddr *) &serverSocketInfo,
+                                    (socklen_t *) &serverSocketInfoLen);
+        if (clientSocketId < 0) {
+            cout << "Warning: could not accept newest client." << endl;
+        } else {
             //clients.push_back(data.descriptor);
             cout << "Client connected successfully." << endl;
 
             // Put the socket in non-blocking mode:
-            if(fcntl(clientSocketId, F_SETFL, fcntl(clientSocketId, F_GETFL) | O_NONBLOCK) < 0) {
+            if (fcntl(clientSocketId, F_SETFL, fcntl(clientSocketId, F_GETFL) | O_NONBLOCK) < 0) {
                 // handle error
                 cout << "Error: Socket is nonblocking.";
             }
-
+            PlayerInfo *playerInfo = new PlayerInfo();
+            playerInfo->setSocketId(clientSocketId);
+            playerInfo->setGameInfo(gameInfo);
             pthread_t thread;
-            pthread_create(&thread, 0, ServerListener::startClientSession, (void *)&clientSocketId);
+            pthread_create(&thread, 0, ServerListener::startPLayerSession, (void *) playerInfo);
             pthread_detach(thread);
         }
     }
 }
 
-void * ServerListener::startClientSession(void * psocketId) {
-    int * socketId =  (int *)psocketId;
+[[noreturn]] void *ServerListener::startPLayerSession(void *pplayerInfo) {
+    PlayerInfo *playerInfo = (PlayerInfo *) pplayerInfo;
+    int socketId = playerInfo->getSocketId();
+    GameInfo *gameInfo = (GameInfo *) (playerInfo->getGameInfo());
+    gameInfo->addPlayer(playerInfo);
     cout << "socketId: " << socketId << endl;
 
-    Socket socket = Socket(*socketId);
+    Socket socket = Socket(socketId);
 
     bool exit = false;
 
     while (!exit) {
-        for (Block * b : GAME_SINGLETON.getBlockList()){
-            Command c;
-            c.setAction(c.ACTION_CREATE_BLOCK);
-            c.setId(b->getId());
-            c.setPosX(b->getPosX());
-            c.setPosY(b->getPosY());
-            c.setType(b->getType());
-            socket.sendCommand(c);
-            //this_thread::sleep_for(chrono::milliseconds(100));
-            //sleep(3);
+
+        Command *cmd = socket.readCommand();
+        if (cmd != NULL) {
+            switch (cmd->getAction()) {
+                case (Command::ACTION_END_GAME): {
+                    exit == true;
+                    break;
+                }
+                case (Command::ACTION_START_GAME): {
+                    for (Block *b: gameInfo->getBlockList()) {
+                        Command c;
+                        c.setAction(c.ACTION_CREATE_BLOCK);
+                        c.setId(b->getId());
+                        c.setPosX(b->getPosX());
+                        c.setPosY(b->getPosY());
+                        c.setType(b->getType());
+                        socket.sendCommand(c);
+                    }
+                    Command c;
+                    c.setAction(c.ACTION_MOVE_BALL);
+                    c.setPosX(gameInfo->getBall()->getX());
+                    c.setPosY(gameInfo->getBall()->getY());
+
+                    socket.sendCommand(c);
+                }
+            }
         }
-
-        Command c2;
-        c2.setAction(c2.ACTION_MOVE_BALL);
-        c2.setPosX(GAME_SINGLETON.getBall()->getX());
-        c2.setPosY(GAME_SINGLETON.getBall()->getY());
-
-        socket.sendCommand(c2);
-
-
-
-        sleep(1000);
-
     }
 
-    close(*socketId);
-   // pthread_exit(NULL);
+    gameInfo->removePlayer(playerInfo);
+    close(socketId);
+    pthread_exit(NULL);
 
 }

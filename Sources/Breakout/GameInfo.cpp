@@ -2,10 +2,11 @@
 // Created by cuadriante on 20/9/21.
 //
 
+#include <cstdio>
 #include <cstdlib>
-#include "../../Headers/Breakout/Game.h"
+#include "../../Headers/Breakout/GameInfo.h"
 
-Game::Game() {
+GameInfo::GameInfo() {
     int id = 0;
     int x = 7;
     int y = 0;
@@ -28,11 +29,26 @@ Game::Game() {
 }
 
 
-const vector<Block *> & Game::getBlockList() const {
+const vector<Block *> & GameInfo::getBlockList() const {
     return blockList;
 }
 
-Ball *Game::getBall() const {
+Ball *GameInfo::getBall() const {
     return ball;
 }
+
+const vector<PlayerInfo *> & GameInfo::getPlayerList() const {
+    return playerList;
+}
+
+void GameInfo::removePlayer(PlayerInfo *playerInfo) {
+    //playerList.erase(playerList.cbegin());
+
+}
+
+void GameInfo::addPlayer(PlayerInfo *playerInfo) {
+    playerList.push_back(playerInfo);
+
+}
+
 

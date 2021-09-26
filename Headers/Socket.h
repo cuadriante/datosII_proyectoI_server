@@ -33,6 +33,7 @@ public:
     void sendPtree(ptree * ptree);
     void sendCommand(Command &command);
     ptree * readPtree();
+    Command *readCommand();
 
 private:
     int socketId;
@@ -47,7 +48,6 @@ private:
     static void* ClientController(void*);
 
 
-    Command *readCommand();
 };
 
 

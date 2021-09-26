@@ -16,6 +16,7 @@
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree//json_parser.hpp>
 #include <chrono>
+#include "Breakout/GameInfo.h"
 
 using namespace std;
 
@@ -28,8 +29,10 @@ private:
     int maxConnectedClients = 5;
 public:
     bool start();
-    void waitForConnections();
-    static void * startClientSession(void * psocketId);
+
+    [[noreturn]] void waitForConnections(GameInfo *gameInfo);
+
+    [[noreturn]] static void * startPLayerSession(void * pplayerInfo);
 };
 
 
