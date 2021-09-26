@@ -9,7 +9,7 @@ long currentTimeInMillis(){
 
 [[noreturn]] void * gameLoop(void * pgame){
     GameInfo * gameInfo = (GameInfo *)pgame;
-    const int ballUpdateIntervalInMilli = 100;
+    const int ballUpdateIntervalInMilli = 20;
     long ballLastUpdated = 0;
 
     while (true){
@@ -18,13 +18,30 @@ long currentTimeInMillis(){
             continue;
         }
         if (currentTimeInMillis() - ballLastUpdated > ballUpdateIntervalInMilli) {
-            gameInfo->getBall()->setX(gameInfo->getBall()->getX() + rand() %3 - 1);
-            gameInfo->getBall()->setY(gameInfo->getBall()->getY() + rand() %3 - 1);
+            Ball * ball = gameInfo->getBall();
+            ball->setX(ball->getX() + ball->getVx());
+            ball->setY(ball->getY() + ball->getVy());
+            if (ball->getX() < 0) { // out of bounds left side
+                ball->setX(0);
+                ball->setVx(-ball->getVx());
+            }
+            if (ball->getX() > 600) { // out of bounds right side
+                ball->setX(600);
+                ball->setVx(-ball->getVx());
+            }
+            if (ball->getY() < 0) { // out of bounds top
+                ball->setY(0);
+                ball->setVy(-ball->getVy());
+            }
+            if (ball->getY() > 600) { // out of bounds bottom
+                ball->setY(600);
+                ball->setVy(-ball->getVy());
+            }
 
             Command cmd;
             cmd.setAction(Command::ACTION_MOVE_BALL);
-            cmd.setPosX(gameInfo->getBall()->getX());
-            cmd.setPosY(gameInfo->getBall()->getY());
+            cmd.setPosX(ball->getX());
+            cmd.setPosY(ball->getY());
 
             for (PlayerInfo * playerInfo: gameInfo->getPlayerList()) {
                 Socket * socket = new Socket(playerInfo->getSocketId());
