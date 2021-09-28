@@ -1,5 +1,4 @@
 #include "../Headers/Socket.h"
-#include "../Headers/Protocol.h"
 #include "../Headers/ServerListener.h"
 #include "../Headers/Breakout/GameInfo.h"
 
@@ -8,6 +7,10 @@ void checkForBallOutOfBounds(Ball *ball);
 void checkBlockCollision(const GameInfo *gameInfo, Ball *ball);
 
 void checkPlayerBarCollision(const GameInfo *gameInfo, Ball *ball);
+
+void checkPointsGained(int type, int i);
+
+void sendPointsGained(const GameInfo *gameInfo, int type);
 
 bool collide(int x1, int x2, int y1, int y2, int w, int z){
     //return true if x-y rect contains w,z
@@ -62,7 +65,6 @@ void checkPlayerBarCollision(const GameInfo *gameInfo, Ball *ball) {
                         playerInfo->getPlayerBar()->getPosY() + 25, ball->getX(), ball->getY())){
                 ball->setVx(ball->getVx());
                 ball->setVy(-ball->getVy());
-                //todo: delete block from list and game window
             }
         }
     }
@@ -72,20 +74,65 @@ void checkBlockCollision(const GameInfo *gameInfo, Ball *ball) {
     if (ball->getVy() < 0){
         for (Block * block: gameInfo->getBlockList()){
             if (block->getHitsToBreak() > 0 && collide(block->getPosX(), block->getPosX() + 100, block->getPosY(), block->getPosY() + 25, ball->getX(), ball->getY())){
+
                 ball->setVx(ball->getVx());
                 ball->setVy(-ball->getVy());
                 block->setHitsToBreak(block->getHitsToBreak() - 1);
                 cout << block->getHitsToBreak() << endl;
+
                 if (block->getHitsToBreak() <= 0){ //cambiar
+                    int type = block->getType();
+
+                    sendPointsGained(gameInfo, type);
+
                     Command c;
                     c.setAction(c.ACTION_DELETE_BLOCK);
                     c.setId(block->getId());
+
                     for (PlayerInfo * playerInfo: gameInfo->getPlayerList()){
                         playerInfo->getSocket()->sendCommand(c);
                     }
+
                 }
             }
         }
+    }
+}
+
+void sendPointsGained(const GameInfo *gameInfo, int type) {
+    int pointsGained;
+    switch (type){
+        case Command::BLOCK_TYPE_COMMON: { //common
+            pointsGained = 10;
+            break;
+        }
+        case Command::BLOCK_TYPE_DOUBLE: { //double
+            pointsGained = 15;
+            break;
+        }
+        case Command::BLOCK_TYPE_TRIPLE: { //triple
+            pointsGained = 20;
+            break;
+        }
+        case Command::BLOCK_TYPE_INTERNAL: { //internal
+            pointsGained = 0;
+            break;
+        }
+        case Command::BLOCK_TYPE_DEEP: { //deep
+            pointsGained = 0;
+            break;
+        }
+        case Command::BLOCK_TYPE_SURPRISE: { //surprise
+            pointsGained = 0;
+            break;
+        }
+    }
+    Command cmd;
+    cmd.setAction(cmd.ACTION_SET_SCORE);
+    cmd.setSize(pointsGained);
+
+    for (PlayerInfo * playerInfo: gameInfo->getPlayerList()){
+        playerInfo->getSocket()->sendCommand(cmd);
     }
 }
 

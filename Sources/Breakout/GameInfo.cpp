@@ -12,9 +12,12 @@ GameInfo::GameInfo() {
     int y = 0;
     //Block * block = new Block(id++, (rand() %5) + 31, x, y);
     //blockList.push_back(block);
+
     for (int row = 0; row < 12; row++){
         for(int col = 0; col < 5; col++){
-            Block * block = new Block(id++, (rand() %6) + 31, x, y);
+            int type = (rand() %6) + 31;
+            Block * block = new Block(id++, type, x, y);
+            block->setHitsByType(type);
             blockList.push_back(block);
             x = x + 120;
         }

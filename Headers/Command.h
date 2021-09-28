@@ -50,7 +50,6 @@ public:
     void setType(int type);
     const string &getName() const;
     void setName(const string &name);
-    void evaluate(string variable);
 
 private:
     int id;

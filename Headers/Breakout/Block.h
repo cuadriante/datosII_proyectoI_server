@@ -5,7 +5,6 @@
 #ifndef DATOSII_PROYECTOI_SERVER_BLOCK_H
 #define DATOSII_PROYECTOI_SERVER_BLOCK_H
 
-
 class Block {
 private:
     int id;
@@ -21,7 +20,7 @@ public:
 
     int getHitsToBreak() const;
 
-    void setHitsToBreak(int hitsToBreak);
+    void setHitsToBreak(int type);
 
     int getPosX() const;
 
@@ -33,6 +32,7 @@ public:
 
     int getType() const;
 
+    void setHitsByType(int type);
 };
 
 

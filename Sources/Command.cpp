@@ -62,13 +62,6 @@ void Command::setId(int id) {
     Command::id = id;
 }
 
-void Command::evaluate(string variable) {
-
-
-
-
-}
-
 void Command::setType(int type) {
     Command::type = type;
 }
