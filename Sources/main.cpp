@@ -43,26 +43,31 @@ long currentTimeInMillis(){
                 ball->setVy(-ball->getVy());
             }
 
-            // check block collision
-            for (Block * block: gameInfo->getBlockList()){
-                if (collide(block->getPosX(), block->getPosX() + 100, block->getPosY(), block->getPosY() + 25, ball->getX(), ball->getY())){
-                    ball->setVx(ball->getVx());
-                    ball->setVy(-ball->getVy());
-                    //todo: delete block from list and game window
+            // check block collision if ball going upwards
+            if (ball->getVy() < 0){
+                for (Block * block: gameInfo->getBlockList()){
+                    if (collide(block->getPosX(), block->getPosX() + 100, block->getPosY(), block->getPosY() + 25, ball->getX(), ball->getY())){
+                        ball->setVx(ball->getVx());
+                        ball->setVy(-ball->getVy());
+                        //todo: delete block from list and game window
+                    }
                 }
             }
 
-            // check player collision
-            for (PlayerInfo * playerInfo: gameInfo->getPlayerList()){
-                if (collide(playerInfo->getPlayerBar()->getPosX(),
-                            playerInfo->getPlayerBar()->getPosX() + playerInfo->getPlayerBar()->getSize(),
-                            playerInfo->getPlayerBar()->getPosY(),
-                            playerInfo->getPlayerBar()->getPosY() + 25, ball->getX(), ball->getY())){
-                    ball->setVx(ball->getVx());
-                    ball->setVy(-ball->getVy());
-                    //todo: delete block from list and game window
+            // check player collision if ball going downwards
+            if (ball->getVy() > 0){
+                for (PlayerInfo * playerInfo: gameInfo->getPlayerList()){
+                    if (collide(playerInfo->getPlayerBar()->getPosX(),
+                                playerInfo->getPlayerBar()->getPosX() + playerInfo->getPlayerBar()->getSize(),
+                                playerInfo->getPlayerBar()->getPosY(),
+                                playerInfo->getPlayerBar()->getPosY() + 25, ball->getX(), ball->getY())){
+                        ball->setVx(ball->getVx());
+                        ball->setVy(-ball->getVy());
+                        //todo: delete block from list and game window
+                    }
                 }
             }
+
 
             Command cmd;
             cmd.setAction(Command::ACTION_MOVE_BALL);
