@@ -14,7 +14,7 @@ long currentTimeInMillis(){
 
 [[noreturn]] void * gameLoop(void * pgame){
     GameInfo * gameInfo = (GameInfo *)pgame;
-    const int ballUpdateIntervalInMilli = 150;
+    const int ballUpdateIntervalInMilli = 100;
     long ballLastUpdated = 0;
 
     while (true){
@@ -46,7 +46,7 @@ long currentTimeInMillis(){
             // check block collision
             for (Block * block: gameInfo->getBlockList()){
                 if (collide(block->getPosX(), block->getPosX() + 100, block->getPosY(), block->getPosY() + 25, ball->getX(), ball->getY())){
-                    ball->setVx(-ball->getVx());
+                    ball->setVx(ball->getVx());
                     ball->setVy(-ball->getVy());
                     //todo: delete block from list and game window
                 }
@@ -58,7 +58,7 @@ long currentTimeInMillis(){
                             playerInfo->getPlayerBar()->getPosX() + playerInfo->getPlayerBar()->getSize(),
                             playerInfo->getPlayerBar()->getPosY(),
                             playerInfo->getPlayerBar()->getPosY() + 25, ball->getX(), ball->getY())){
-                    ball->setVx(-ball->getVx());
+                    ball->setVx(ball->getVx());
                     ball->setVy(-ball->getVy());
                     //todo: delete block from list and game window
                 }
