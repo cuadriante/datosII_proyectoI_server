@@ -3,6 +3,11 @@
 #include "../Headers/ServerListener.h"
 #include "../Headers/Breakout/GameInfo.h"
 
+bool collide(int x1, int x2, int y1, int y2, int w, int z){
+    //return true if x-y rect contains w,z
+    return (x1 <= w && w <= x2 && y1 <= z && z <= y2);
+}
+
 long currentTimeInMillis(){
     return chrono::duration_cast<chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
 }
@@ -36,6 +41,27 @@ long currentTimeInMillis(){
             if (ball->getY() > 600) { // out of bounds bottom
                 ball->setY(600);
                 ball->setVy(-ball->getVy());
+            }
+
+            // check block collision
+            for (Block * block: gameInfo->getBlockList()){
+                if (collide(block->getPosX(), block->getPosX() + 100, block->getPosY(), block->getPosY() + 25, ball->getX(), ball->getY())){
+                    ball->setVx(-ball->getVx());
+                    ball->setVy(-ball->getVy());
+                    //todo: delete block from list and game window
+                }
+            }
+
+            // check player collision
+            for (PlayerInfo * playerInfo: gameInfo->getPlayerList()){
+                if (collide(playerInfo->getPlayerBar()->getPosX(),
+                            playerInfo->getPlayerBar()->getPosX() + playerInfo->getPlayerBar()->getSize(),
+                            playerInfo->getPlayerBar()->getPosY(),
+                            playerInfo->getPlayerBar()->getPosY() + 25, ball->getX(), ball->getY())){
+                    ball->setVx(-ball->getVx());
+                    ball->setVy(-ball->getVy());
+                    //todo: delete block from list and game window
+                }
             }
 
             Command cmd;

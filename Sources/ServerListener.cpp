@@ -118,34 +118,22 @@ bool ServerListener::start() {
                     socket.sendCommand(c);
                     break;
                 }
-                case (Command::ACTION_MOVE_LEFT): {
-                    cout << "left" << endl;
-                    int x = playerInfo->getPlayerBar()->getPosX() - 10;
+                case (Command::ACTION_MOVE_PLAYER): {
+                    int x = cmd->getPosX();
+                    int y = cmd->getPosY();
                     if (x < 0) {
                         x = 0;
                     }
                     playerInfo->getPlayerBar()->setPosX(x);
-                    Command c;
-                    c.setAction(c.ACTION_MOVE_PLAYER);
-                    c.setPosX(x);
-                    c.setPosY(playerInfo->getPlayerBar()->getPosY());
-                    c.setSize(playerInfo->getPlayerBar()->getSize());
-                    socket.sendCommand(c);
-                    break;
-                }
-                case (Command::ACTION_MOVE_RIGHT): {
-                    cout << "right" << endl;
-                    int x = playerInfo->getPlayerBar()->getPosX() + 10;
-                    if (x > 600) {
-                        x = 600;
-                    }
-                    playerInfo->getPlayerBar()->setPosX(x);
-                    Command c;
-                    c.setAction(c.ACTION_MOVE_PLAYER);
-                    c.setPosX(x);
-                    c.setPosY(playerInfo->getPlayerBar()->getPosY());
-                    c.setSize(playerInfo->getPlayerBar()->getSize());
-                    socket.sendCommand(c);
+                    playerInfo->getPlayerBar()->setPosY(y);
+                    cout << "Client moved to x: " << x << " y: " << y << endl;
+                    //todo: send new pos to all clients except one
+//                    Command c;
+//                    c.setAction(c.ACTION_MOVE_PLAYER);
+//                    c.setPosX(x);
+//                    c.setPosY(y);
+//                    c.setSize(playerInfo->getPlayerBar()->getSize());
+//                    socket.sendCommand(c);
                     break;
                 }
             }
