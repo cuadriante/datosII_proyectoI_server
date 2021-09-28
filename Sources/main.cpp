@@ -3,6 +3,12 @@
 #include "../Headers/ServerListener.h"
 #include "../Headers/Breakout/GameInfo.h"
 
+void checkForBallOutOfBounds(Ball *ball);
+
+void checkBlockCollision(const GameInfo *gameInfo, Ball *ball);
+
+void checkPlayerBarCollision(const GameInfo *gameInfo, Ball *ball);
+
 bool collide(int x1, int x2, int y1, int y2, int w, int z){
     //return true if x-y rect contains w,z
     return (x1 <= w && w <= x2 && y1 <= z && z <= y2);
@@ -23,51 +29,11 @@ long currentTimeInMillis(){
             continue;
         }
         if (currentTimeInMillis() - ballLastUpdated > ballUpdateIntervalInMilli) {
+
             Ball * ball = gameInfo->getBall();
-            ball->setX(ball->getX() + ball->getVx());
-            ball->setY(ball->getY() + ball->getVy());
-            if (ball->getX() < 0) { // out of bounds left side
-                ball->setX(0);
-                ball->setVx(-ball->getVx());
-            }
-            if (ball->getX() > 600) { // out of bounds right side
-                ball->setX(600);
-                ball->setVx(-ball->getVx());
-            }
-            if (ball->getY() < 0) { // out of bounds top
-                ball->setY(0);
-                ball->setVy(-ball->getVy());
-            }
-            if (ball->getY() > 600) { // out of bounds bottom
-                ball->setY(600);
-                ball->setVy(-ball->getVy());
-            }
-
-            // check block collision if ball going upwards
-            if (ball->getVy() < 0){
-                for (Block * block: gameInfo->getBlockList()){
-                    if (collide(block->getPosX(), block->getPosX() + 100, block->getPosY(), block->getPosY() + 25, ball->getX(), ball->getY())){
-                        ball->setVx(ball->getVx());
-                        ball->setVy(-ball->getVy());
-                        //todo: delete block from list and game window
-                    }
-                }
-            }
-
-            // check player collision if ball going downwards
-            if (ball->getVy() > 0){
-                for (PlayerInfo * playerInfo: gameInfo->getPlayerList()){
-                    if (collide(playerInfo->getPlayerBar()->getPosX(),
-                                playerInfo->getPlayerBar()->getPosX() + playerInfo->getPlayerBar()->getSize(),
-                                playerInfo->getPlayerBar()->getPosY(),
-                                playerInfo->getPlayerBar()->getPosY() + 25, ball->getX(), ball->getY())){
-                        ball->setVx(ball->getVx());
-                        ball->setVy(-ball->getVy());
-                        //todo: delete block from list and game window
-                    }
-                }
-            }
-
+            checkForBallOutOfBounds(ball);
+            checkBlockCollision(gameInfo, ball);
+            checkPlayerBarCollision(gameInfo, ball);
 
             Command cmd;
             cmd.setAction(Command::ACTION_MOVE_BALL);
@@ -85,6 +51,63 @@ long currentTimeInMillis(){
 
     }
 
+}
+
+void checkPlayerBarCollision(const GameInfo *gameInfo, Ball *ball) {
+    if (ball->getVy() > 0){
+        for (PlayerInfo * playerInfo: gameInfo->getPlayerList()){
+            if (collide(playerInfo->getPlayerBar()->getPosX(),
+                        playerInfo->getPlayerBar()->getPosX() + playerInfo->getPlayerBar()->getSize(),
+                        playerInfo->getPlayerBar()->getPosY(),
+                        playerInfo->getPlayerBar()->getPosY() + 25, ball->getX(), ball->getY())){
+                ball->setVx(ball->getVx());
+                ball->setVy(-ball->getVy());
+                //todo: delete block from list and game window
+            }
+        }
+    }
+}
+
+void checkBlockCollision(const GameInfo *gameInfo, Ball *ball) {
+    if (ball->getVy() < 0){
+        for (Block * block: gameInfo->getBlockList()){
+            if (block->getHitsToBreak() > 0 && collide(block->getPosX(), block->getPosX() + 100, block->getPosY(), block->getPosY() + 25, ball->getX(), ball->getY())){
+                ball->setVx(ball->getVx());
+                ball->setVy(-ball->getVy());
+                block->setHitsToBreak(block->getHitsToBreak() - 1);
+                cout << block->getHitsToBreak() << endl;
+                if (block->getHitsToBreak() <= 0){ //cambiar
+                    Command c;
+                    c.setAction(c.ACTION_DELETE_BLOCK);
+                    c.setId(block->getId());
+                    for (PlayerInfo * playerInfo: gameInfo->getPlayerList()){
+                        playerInfo->getSocket()->sendCommand(c);
+                    }
+                }
+            }
+        }
+    }
+}
+
+void checkForBallOutOfBounds(Ball *ball) {
+    ball->setX(ball->getX() + ball->getVx());
+    ball->setY(ball->getY() + ball->getVy());
+    if (ball->getX() < 0) { // out of bounds left side
+        ball->setX(0);
+        ball->setVx(-ball->getVx());
+    }
+    if (ball->getX() > 600) { // out of bounds right side
+        ball->setX(600);
+        ball->setVx(-ball->getVx());
+    }
+    if (ball->getY() < 0) { // out of bounds top
+        ball->setY(0);
+        ball->setVy(-ball->getVy());
+    }
+    if (ball->getY() > 600) { // out of bounds bottom
+        ball->setY(600);
+        ball->setVy(-ball->getVy());
+    }
 }
 
 

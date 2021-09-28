@@ -36,4 +36,12 @@ PlayerBar *PlayerInfo::getPlayerBar() const {
     return playerBar;
 }
 
+Socket *PlayerInfo::getSocket() const {
+    return socket;
+}
+
+void PlayerInfo::setSocket(Socket *socket) {
+    PlayerInfo::socket = socket;
+}
+
 

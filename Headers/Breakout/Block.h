@@ -10,7 +10,7 @@ class Block {
 private:
     int id;
     int type;
-    int hitsToBreak;
+    int hitsToBreak = 3;
     int posx;
     int posy;
 

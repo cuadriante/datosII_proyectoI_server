@@ -25,8 +25,8 @@ GameInfo::GameInfo() {
     ball = new Ball();
     ball->setX(25);
     ball->setY(720);
-    ball->setVx(25);
-    ball->setVy(-20);
+    ball->setVx(15);
+    ball->setVy(-15);
 
 }
 

@@ -65,6 +65,7 @@ bool ServerListener::start() {
             }
             PlayerInfo *playerInfo = new PlayerInfo();
             playerInfo->setSocketId(clientSocketId);
+
             playerInfo->setGameInfo(gameInfo);
             pthread_t thread;
             pthread_create(&thread, 0, ServerListener::startPLayerSession, (void *) playerInfo);
@@ -80,13 +81,13 @@ bool ServerListener::start() {
     gameInfo->addPlayer(playerInfo);
     cout << "socketId: " << socketId << endl;
 
-    Socket socket = Socket(socketId);
-
+    Socket * socket = new Socket(socketId);
+    playerInfo->setSocket(socket);
     bool exit = false;
 
     while (!exit) {
 
-        Command *cmd = socket.readCommand();
+        Command *cmd = socket->readCommand();
         if (cmd != NULL) {
             switch (cmd->getAction()) {
                 case (Command::ACTION_END_GAME): {
@@ -101,21 +102,21 @@ bool ServerListener::start() {
                         c.setPosX(b->getPosX());
                         c.setPosY(b->getPosY());
                         c.setType(b->getType());
-                        socket.sendCommand(c);
+                        socket->sendCommand(c);
                     }
                     Command c;
                     c.setAction(c.ACTION_MOVE_BALL);
                     c.setPosX(gameInfo->getBall()->getX());
                     c.setPosY(gameInfo->getBall()->getY());
 
-                    socket.sendCommand(c);
+                    socket->sendCommand(c);
 
                     c.setAction(c.ACTION_MOVE_PLAYER);
                     c.setPosX(300);
                     c.setPosY(550);
                     c.setSize(100);
 
-                    socket.sendCommand(c);
+                    socket->sendCommand(c);
                     break;
                 }
                 case (Command::ACTION_MOVE_PLAYER): {
@@ -126,7 +127,7 @@ bool ServerListener::start() {
                     }
                     playerInfo->getPlayerBar()->setPosX(x);
                     playerInfo->getPlayerBar()->setPosY(y);
-                    cout << "Client moved to x: " << x << " y: " << y << endl;
+                    //cout << "Client moved to x: " << x << " y: " << y << endl;
                     //todo: send new pos to all clients except one
 //                    Command c;
 //                    c.setAction(c.ACTION_MOVE_PLAYER);
@@ -140,6 +141,7 @@ bool ServerListener::start() {
         }
     }
 
+    delete socket;
     gameInfo->removePlayer(playerInfo);
     close(socketId);
     pthread_exit(NULL);

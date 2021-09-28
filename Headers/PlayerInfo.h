@@ -7,6 +7,7 @@
 
 
 #include "Breakout/PlayerBar.h"
+#include "Socket.h"
 
 class PlayerInfo {
 private:
@@ -14,6 +15,7 @@ private:
     int pointsGained = 0;
     void * gameInfo;
     PlayerBar * playerBar;
+    Socket * socket;
 
 public:
 
@@ -32,6 +34,10 @@ public:
     void setGameInfo(void *gameInfo);
 
     PlayerBar *getPlayerBar() const;
+
+    Socket *getSocket() const;
+
+    void setSocket(Socket *socket);
 
 };
 
