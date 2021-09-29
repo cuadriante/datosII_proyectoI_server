@@ -12,28 +12,30 @@ void checkPointsGained(int type, int i);
 
 void sendPointsGained(GameInfo *gameInfo, int type);
 
-bool collide(int x1, int x2, int y1, int y2, int w, int z){
+void createSurprise(GameInfo *gameInfo);
+
+bool collide(int x1, int x2, int y1, int y2, int w, int z) {
     //return true if x-y rect contains w,z
     return (x1 <= w && w <= x2 && y1 <= z && z <= y2);
 }
 
-long currentTimeInMillis(){
+long currentTimeInMillis() {
     return chrono::duration_cast<chrono::milliseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
 }
 
-[[noreturn]] void * gameLoop(void * pgame){
-    GameInfo * gameInfo = (GameInfo *)pgame;
+[[noreturn]] void *gameLoop(void *pgame) {
+    GameInfo *gameInfo = (GameInfo *) pgame;
     const int ballUpdateIntervalInMilli = 100;
     long ballLastUpdated = 0;
 
-    while (true){
-        if (gameInfo->getPlayerList().size() == 0){
+    while (true) {
+        if (gameInfo->getPlayerList().size() == 0) {
             sleep(1);
             continue;
         }
         if (currentTimeInMillis() - ballLastUpdated > ballUpdateIntervalInMilli) {
 
-            Ball * ball = gameInfo->getBall();
+            Ball *ball = gameInfo->getBall();
             checkForBallOutOfBounds(ball);
             checkBlockCollision(gameInfo, ball);
             checkPlayerBarCollision(gameInfo, ball);
@@ -43,8 +45,8 @@ long currentTimeInMillis(){
             cmd.setPosX(ball->getX());
             cmd.setPosY(ball->getY());
 
-            for (PlayerInfo * playerInfo: gameInfo->getPlayerList()) {
-                Socket * socket = new Socket(playerInfo->getSocketId());
+            for (PlayerInfo *playerInfo: gameInfo->getPlayerList()) {
+                Socket *socket = new Socket(playerInfo->getSocketId());
                 socket->sendCommand(cmd);
             }
 
@@ -57,12 +59,12 @@ long currentTimeInMillis(){
 }
 
 void checkPlayerBarCollision(const GameInfo *gameInfo, Ball *ball) {
-    if (ball->getVy() > 0){
-        for (PlayerInfo * playerInfo: gameInfo->getPlayerList()){
+    if (ball->getVy() > 0) {
+        for (PlayerInfo *playerInfo: gameInfo->getPlayerList()) {
             if (collide(playerInfo->getPlayerBar()->getPosX(),
                         playerInfo->getPlayerBar()->getPosX() + playerInfo->getPlayerBar()->getSize(),
                         playerInfo->getPlayerBar()->getPosY(),
-                        playerInfo->getPlayerBar()->getPosY() + 25, ball->getX(), ball->getY())){
+                        playerInfo->getPlayerBar()->getPosY() + 25, ball->getX(), ball->getY())) {
                 ball->setVx(ball->getVx());
                 ball->setVy(-ball->getVy());
             }
@@ -71,48 +73,116 @@ void checkPlayerBarCollision(const GameInfo *gameInfo, Ball *ball) {
 }
 
 void checkBlockCollision(GameInfo *gameInfo, Ball *ball) {
-    if (ball->getVy() < 0){
-        for (Block * block: gameInfo->getBlockList()){
-            if (block->getHitsToBreak() > 0 && collide(block->getPosX(), block->getPosX() + 100, block->getPosY(), block->getPosY() + 25, ball->getX(), ball->getY())){
+    for (Block *block: gameInfo->getBlockList()) {
+        if (block->getHitsToBreak() > 0 &&
+            collide(block->getPosX(), block->getPosX() + 100, block->getPosY(),
+                    block->getPosY() + 25, ball->getX(),
+                    ball->getY())) {
 
-                ball->setVx(ball->getVx());
-                ball->setVy(-ball->getVy());
-                block->setHitsToBreak(block->getHitsToBreak() - 1);
-                cout << block->getHitsToBreak() << endl;
+            ball->setVx(ball->getVx());
+            ball->setVy(-ball->getVy());
+            block->setHitsToBreak(block->getHitsToBreak() - 1);
+            cout << block->getHitsToBreak() << endl;
 
-                if (block->getType() == Command::BLOCK_TYPE_DEEP) {
-                    int currentDepthLevel = gameInfo->getDepthLevel();
-                    gameInfo->setDepthLevel(currentDepthLevel + 1);
-                    Command cmd;
-                    cmd.setAction(cmd.ACTION_SET_DEPTH_LEVEL);
-                    cmd.setSize(gameInfo->getDepthLevel());
-                    for (PlayerInfo * playerInfo: gameInfo->getPlayerList()){
-                        playerInfo->getSocket()->sendCommand(cmd);
-                    }
+            //surprise
+            if (block->getType() == Command::BLOCK_TYPE_SURPRISE) {
+                createSurprise(gameInfo);
+            }
+
+            // change depth level
+            if (block->getType() == Command::BLOCK_TYPE_DEEP) {
+                int currentDepthLevel = gameInfo->getDepthLevel();
+                gameInfo->setDepthLevel(currentDepthLevel + 1);
+                Command cmd;
+                cmd.setAction(cmd.ACTION_SET_DEPTH_LEVEL);
+                cmd.setSize(gameInfo->getDepthLevel());
+                for (PlayerInfo *playerInfo: gameInfo->getPlayerList()) {
+                    playerInfo->getSocket()->sendCommand(cmd);
+                }
+            }
+
+            if (block->getHitsToBreak() <= 0) { //cambiar
+                int type = block->getType();
+
+                sendPointsGained(gameInfo, type);
+
+                Command c;
+                c.setAction(c.ACTION_DELETE_BLOCK);
+                c.setId(block->getId());
+
+                for (PlayerInfo *playerInfo: gameInfo->getPlayerList()) {
+                    playerInfo->getSocket()->sendCommand(c);
                 }
 
-                if (block->getHitsToBreak() <= 0){ //cambiar
-                    int type = block->getType();
-
-                    sendPointsGained(gameInfo, type);
-
-                    Command c;
-                    c.setAction(c.ACTION_DELETE_BLOCK);
-                    c.setId(block->getId());
-
-                    for (PlayerInfo * playerInfo: gameInfo->getPlayerList()){
-                        playerInfo->getSocket()->sendCommand(c);
-                    }
-
-                }
             }
         }
     }
 }
 
+void createSurprise(GameInfo *gameInfo) {
+    int surprise = rand() % 5 + 1;
+    int currentVx = gameInfo->getBall()->getVx();
+    int currentVy = gameInfo->getBall()->getVy();
+
+    switch (surprise) {
+        case 1: { // increase velocity
+            gameInfo->getBall()->setVy(currentVy + (rand() % 10));
+            gameInfo->getBall()->setVx(currentVx + (rand() % 10));
+            cout << "INCREASE VELOCITY" << endl;
+            cout << "Vx: " << gameInfo->getBall()->getVx() << endl;
+            cout << "Vy: " << gameInfo->getBall()->getVy() << endl;
+            break;
+        }
+        case 2: { //decrease velocity
+            gameInfo->getBall()->setVy(currentVy - (rand() % 10));
+            gameInfo->getBall()->setVx(currentVx - (rand() % 10));
+            cout << "DECREASE VELOCITY" << endl;
+            cout << "Vx: " << gameInfo->getBall()->getVx() << endl;
+            cout << "Vy: " << gameInfo->getBall()->getVy() << endl;
+            break;
+        }
+        case 3: { // increase player size
+            cout << "INCREASE PLAYER BAR SIZE" << endl;
+            Command c;
+            c.setAction(c.ACTION_SET_PLAYER_BAR_SIZE);
+            for (PlayerInfo *playerInfo: gameInfo->getPlayerList()) {
+                int currentSize = playerInfo->getPlayerBar()->getSize();
+                playerInfo->getPlayerBar()->setSize(currentSize + (rand() % 20));
+                c.setSize(playerInfo->getPlayerBar()->getSize());
+                playerInfo->getSocket()->sendCommand(c);
+                cout << "Size: " << playerInfo->getPlayerBar()->getSize() << endl;
+            }
+
+            break;
+        }
+        case 4: { // decrease player size
+            cout << "DECREASE PLAYER BAR SIZE" << endl;
+            Command c;
+            c.setAction(c.ACTION_SET_PLAYER_BAR_SIZE);
+            for (PlayerInfo *playerInfo: gameInfo->getPlayerList()) {
+                int currentSize = playerInfo->getPlayerBar()->getSize();
+                playerInfo->getPlayerBar()->setSize(currentSize - (rand() % 20));
+                if (playerInfo->getPlayerBar()->getSize() >= 150) {
+                    playerInfo->getPlayerBar()->setSize(150);
+                }
+                //playerInfo->getSocket()->sendCommand(c);
+                cout << "Size: " << playerInfo->getPlayerBar()->getSize() << endl;
+            }
+            break;
+        }
+        case 5: { //tbd
+            cout << "OTHER SURPRISE" << endl;
+            break;
+        }
+    }
+    for (PlayerInfo *playerInfo: gameInfo->getPlayerList()) {
+
+    }
+}
+
 void sendPointsGained(GameInfo *gameInfo, int type) {
     int pointsGained;
-    switch (type){
+    switch (type) {
         case Command::BLOCK_TYPE_COMMON: { //common
             pointsGained = 10;
             break;
@@ -126,7 +196,7 @@ void sendPointsGained(GameInfo *gameInfo, int type) {
             break;
         }
         case Command::BLOCK_TYPE_INTERNAL: { //internal
-            if (gameInfo->getDepthLevel() <= 0){
+            if (gameInfo->getDepthLevel() <= 0) {
                 pointsGained = 0;
             } else {
                 pointsGained = 30;
@@ -147,7 +217,7 @@ void sendPointsGained(GameInfo *gameInfo, int type) {
     cmd.setAction(cmd.ACTION_SET_SCORE);
     cmd.setSize(pointsGained);
 
-    for (PlayerInfo * playerInfo: gameInfo->getPlayerList()){
+    for (PlayerInfo *playerInfo: gameInfo->getPlayerList()) {
         playerInfo->getSocket()->sendCommand(cmd);
     }
 }
@@ -176,9 +246,9 @@ void checkForBallOutOfBounds(Ball *ball) {
 
 int main() {
 
-    GameInfo * gameInfo = new GameInfo();
+    GameInfo *gameInfo = new GameInfo();
     ServerListener serverListener;
-    if (serverListener.start()){
+    if (serverListener.start()) {
         pthread_t thread;
         pthread_create(&thread, 0, gameLoop, (void *) gameInfo);
         pthread_detach(thread);

@@ -8,25 +8,50 @@
 
 class Ball {
 private:
-    int x;
-    int y;
-    int Vx;
-    int Vy;
+    int x; /**<initial x position*/
+    int y; /**<initial y position*/
+    int Vx; /**<initial x velocity*/
+    int Vy; /**<initial y velocity*/
 public:
+    /** Returns x position.
+     *
+     * @return
+     */
     int getX() const;
-
+    /** Sets x position.
+     *
+     * @param x
+     */
     void setX(int x);
-
+    /**Returns Y position.
+     *
+     * @return
+     */
     int getY() const;
-
+    /**Sets y position.
+     *
+     * @param y
+     */
     void setY(int y);
-
+    /** Returns x velocity.
+     *
+     * @return
+     */
     int getVx() const;
-
+    /** Sets x velocity.
+     *
+     * @param vx
+     */
     void setVx(int vx);
-
+    /** Sets y velocity.
+     *
+     * @return
+     */
     int getVy() const;
-
+    /** Sets y velocity.
+     *
+     * @param vy
+     */
     void setVy(int vy);
 };
 

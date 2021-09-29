@@ -50,7 +50,7 @@ void Block::setHitsByType(int type) {
             break;
         }
         case 36: { //surprise
-            hits = 2;
+            hits = 1;
             break;
         }
     }

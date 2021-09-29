@@ -22,16 +22,27 @@ using namespace std;
 
 class ServerListener {
 private:
-    int serverSocketId;
-    struct sockaddr_in serverSocketInfo;
-    int serverSocketInfoLen = sizeof(serverSocketInfo);
-    int serverSocketPort = 4050;
-    int maxConnectedClients = 5;
+    int serverSocketId; /**<initial server socket id*/
+    struct sockaddr_in serverSocketInfo; /**<initial server socket information*/
+    int serverSocketInfoLen = sizeof(serverSocketInfo); /**<initial length of server socket information*/
+    int serverSocketPort = 4050; /**<initial port*/
+    int maxConnectedClients = 5; /**<initial maximum quantity of connected clients in server*/
 public:
+    /** Sets and binds socket kernel.
+     *
+     * @return
+     */
     bool start();
-
+    /** Waits for client socket to connect and starts game if successful.
+     *
+     * @param gameInfo
+     */
     [[noreturn]] void waitForConnections(GameInfo *gameInfo);
-
+    /** Starts game in client socket if succesfully connected.
+     *
+     * @param pplayerInfo
+     * @return
+     */
     [[noreturn]] static void * startPLayerSession(void * pplayerInfo);
 };
 

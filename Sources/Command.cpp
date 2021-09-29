@@ -4,15 +4,6 @@
 
 #include "../Headers/Command.h"
 
-void Command::writeToPtree(ptree *pt) {
-    pt->put("action", action);
-    pt->put("posX", posX);
-}
-
-void Command::readFromPtree(ptree *pt) {
-    action = pt->get<int>("action", 0);
-    posX = pt->get<int>("posX", 0);
-}
 
 void Command::setAction(int action) {
     this->action = action;
