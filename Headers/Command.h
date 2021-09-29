@@ -23,6 +23,7 @@ public:
     static const int ACTION_DELETE_BLOCK = 14;
     static const int ACTION_SET_SCORE = 15;
     static const int ACTION_CREATE_BLOCK = 16;
+    static const int ACTION_SET_DEPTH_LEVEL = 17;
     // to server
     static const int ACTION_START_GAME = 20;
     static const int ACTION_MOVE_LEFT = 21;

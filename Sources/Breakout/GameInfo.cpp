@@ -56,4 +56,12 @@ void GameInfo::addPlayer(PlayerInfo *playerInfo) {
 
 }
 
+int GameInfo::getDepthLevel() const {
+    return depthLevel;
+}
+
+void GameInfo::setDepthLevel(int depthLevel) {
+    this->depthLevel = depthLevel;
+}
+
 

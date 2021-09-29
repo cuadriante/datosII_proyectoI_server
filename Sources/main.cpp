@@ -4,13 +4,13 @@
 
 void checkForBallOutOfBounds(Ball *ball);
 
-void checkBlockCollision(const GameInfo *gameInfo, Ball *ball);
+void checkBlockCollision(GameInfo *gameInfo, Ball *ball);
 
 void checkPlayerBarCollision(const GameInfo *gameInfo, Ball *ball);
 
 void checkPointsGained(int type, int i);
 
-void sendPointsGained(const GameInfo *gameInfo, int type);
+void sendPointsGained(GameInfo *gameInfo, int type);
 
 bool collide(int x1, int x2, int y1, int y2, int w, int z){
     //return true if x-y rect contains w,z
@@ -70,7 +70,7 @@ void checkPlayerBarCollision(const GameInfo *gameInfo, Ball *ball) {
     }
 }
 
-void checkBlockCollision(const GameInfo *gameInfo, Ball *ball) {
+void checkBlockCollision(GameInfo *gameInfo, Ball *ball) {
     if (ball->getVy() < 0){
         for (Block * block: gameInfo->getBlockList()){
             if (block->getHitsToBreak() > 0 && collide(block->getPosX(), block->getPosX() + 100, block->getPosY(), block->getPosY() + 25, ball->getX(), ball->getY())){
@@ -79,6 +79,17 @@ void checkBlockCollision(const GameInfo *gameInfo, Ball *ball) {
                 ball->setVy(-ball->getVy());
                 block->setHitsToBreak(block->getHitsToBreak() - 1);
                 cout << block->getHitsToBreak() << endl;
+
+                if (block->getType() == Command::BLOCK_TYPE_DEEP) {
+                    int currentDepthLevel = gameInfo->getDepthLevel();
+                    gameInfo->setDepthLevel(currentDepthLevel + 1);
+                    Command cmd;
+                    cmd.setAction(cmd.ACTION_SET_DEPTH_LEVEL);
+                    cmd.setSize(gameInfo->getDepthLevel());
+                    for (PlayerInfo * playerInfo: gameInfo->getPlayerList()){
+                        playerInfo->getSocket()->sendCommand(cmd);
+                    }
+                }
 
                 if (block->getHitsToBreak() <= 0){ //cambiar
                     int type = block->getType();
@@ -99,7 +110,7 @@ void checkBlockCollision(const GameInfo *gameInfo, Ball *ball) {
     }
 }
 
-void sendPointsGained(const GameInfo *gameInfo, int type) {
+void sendPointsGained(GameInfo *gameInfo, int type) {
     int pointsGained;
     switch (type){
         case Command::BLOCK_TYPE_COMMON: { //common
@@ -115,7 +126,12 @@ void sendPointsGained(const GameInfo *gameInfo, int type) {
             break;
         }
         case Command::BLOCK_TYPE_INTERNAL: { //internal
-            pointsGained = 0;
+            if (gameInfo->getDepthLevel() <= 0){
+                pointsGained = 0;
+            } else {
+                pointsGained = 30;
+            }
+
             break;
         }
         case Command::BLOCK_TYPE_DEEP: { //deep

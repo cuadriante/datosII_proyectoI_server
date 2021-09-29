@@ -18,6 +18,7 @@ private:
     vector<PlayerInfo *> playerList;
     vector<Block *> blockList;
     Ball * ball;
+    int depthLevel = 0;
 
 public:
     GameInfo();
@@ -34,6 +35,9 @@ public:
 
     void addPlayer(PlayerInfo * playerInfo);
 
+    int getDepthLevel() const;
+
+    void setDepthLevel(int depthLevel);
 
 
 };
