@@ -2,6 +2,13 @@
 // Created by cuadriante on 14/9/21.
 //
 
+/** @brief ServerListener class used for sending messages to socket.
+
+    @author cuadriante
+    @date September 2021
+    */
+
+
 #ifndef DATOSII_PROYECTOI_SERVER_SERVERLISTENER_H
 #define DATOSII_PROYECTOI_SERVER_SERVERLISTENER_H
 #include <sys/socket.h>

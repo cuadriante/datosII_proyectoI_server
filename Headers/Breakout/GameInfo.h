@@ -2,6 +2,13 @@
 // Created by cuadriante on 20/9/21.
 //
 
+/** @brief GameInfo class used for storing game information.
+
+    @author cuadriante
+    @date September 2021
+    */
+
+
 #ifndef DATOSII_PROYECTOI_SERVER_GAMEINFO_H
 #define DATOSII_PROYECTOI_SERVER_GAMEINFO_H
 

@@ -2,6 +2,13 @@
 // Created by cuadriante on 8/9/21.
 //
 
+/** @brief Block class used for storing block information.
+
+    @author cuadriante
+    @date September 2021
+    */
+
+
 #ifndef DATOSII_PROYECTOI_SERVER_BLOCK_H
 #define DATOSII_PROYECTOI_SERVER_BLOCK_H
 

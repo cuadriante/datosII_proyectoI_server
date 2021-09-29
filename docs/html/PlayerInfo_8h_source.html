@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Datos II Proyecto I Server
+   <div id="projectname">Datos II Proyecto I Server<span id="projectnumber">&#160;0.1</span>
    </div>
   </td>
  </tr>
@@ -73,37 +73,38 @@ $(function() {
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Created by cuadriante on 25/9/21.</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef DATOSII_PROYECTOI_SERVER_PLAYERINFO_H</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define DATOSII_PROYECTOI_SERVER_PLAYERINFO_H</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;Breakout/PlayerBar.h&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;Socket.h&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classPlayerInfo.html">   12</a></span><span class="keyword">class </span><a class="code hl_class" href="classPlayerInfo.html">PlayerInfo</a> {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordtype">int</span> socketId; </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordtype">int</span> pointsGained = 0; </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordtype">void</span> * gameInfo; </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    PlayerBar * playerBar; </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_class" href="classSocket.html">Socket</a> * socket; </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classPlayerInfo.html#a05e9b9529ed8e4638b2bd2fb76b3abeb">   24</a></span>    <a class="code hl_function" href="classPlayerInfo.html#a05e9b9529ed8e4638b2bd2fb76b3abeb">PlayerInfo</a>();</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classPlayerInfo.html#a374ccbff75bab08aeed31414d90b27f1">   29</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classPlayerInfo.html#a374ccbff75bab08aeed31414d90b27f1">getSocketId</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classPlayerInfo.html#a114835061981731793b050c6ef75945a">   34</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPlayerInfo.html#a114835061981731793b050c6ef75945a">setSocketId</a>(<span class="keywordtype">int</span> socketId);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classPlayerInfo.html#ac5bb2bf41bf64b90df5dc5bbd8909074">   39</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classPlayerInfo.html#ac5bb2bf41bf64b90df5dc5bbd8909074">getPointsGained</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classPlayerInfo.html#a6306de8303131a1f44246b52825119ce">   44</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPlayerInfo.html#a6306de8303131a1f44246b52825119ce">setPointsGained</a>(<span class="keywordtype">int</span> pointGained);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classPlayerInfo.html#a75b0634daef5de02bb100c5360fc2aed">   49</a></span>    <span class="keywordtype">void</span> *<a class="code hl_function" href="classPlayerInfo.html#a75b0634daef5de02bb100c5360fc2aed">getGameInfo</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classPlayerInfo.html#af556184c48c01980afcdbd90dfaef39e">   54</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPlayerInfo.html#af556184c48c01980afcdbd90dfaef39e">setGameInfo</a>(<span class="keywordtype">void</span> *gameInfo);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classPlayerInfo.html#a0fe5dc939933b02ad556c4c84f6bc863">   59</a></span>    PlayerBar *<a class="code hl_function" href="classPlayerInfo.html#a0fe5dc939933b02ad556c4c84f6bc863">getPlayerBar</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classPlayerInfo.html#a51b3274b7435614b271820b10345e35e">   64</a></span>    <a class="code hl_class" href="classSocket.html">Socket</a> *<a class="code hl_function" href="classPlayerInfo.html#a51b3274b7435614b271820b10345e35e">getSocket</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classPlayerInfo.html#ada4cefa574adfa9ae1ff27d201b00e61">   69</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPlayerInfo.html#ada4cefa574adfa9ae1ff27d201b00e61">setSocket</a>(<a class="code hl_class" href="classSocket.html">Socket</a> *socket);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>};</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#endif </span><span class="comment">//DATOSII_PROYECTOI_SERVER_PLAYERINFO_H</span></div>
-<div class="ttc" id="aclassPlayerInfo_html"><div class="ttname"><a href="classPlayerInfo.html">PlayerInfo</a></div><div class="ttdef"><b>Definition:</b> PlayerInfo.h:12</div></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#ifndef DATOSII_PROYECTOI_SERVER_PLAYERINFO_H</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#define DATOSII_PROYECTOI_SERVER_PLAYERINFO_H</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;Breakout/PlayerBar.h&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;Socket.h&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classPlayerInfo.html">   18</a></span><span class="keyword">class </span><a class="code hl_class" href="classPlayerInfo.html">PlayerInfo</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">int</span> socketId; </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">int</span> pointsGained = 0; </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">void</span> * gameInfo; </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_class" href="classPlayerBar.html">PlayerBar</a> * playerBar; </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_class" href="classSocket.html">Socket</a> * socket; </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classPlayerInfo.html#a05e9b9529ed8e4638b2bd2fb76b3abeb">   30</a></span>    <a class="code hl_function" href="classPlayerInfo.html#a05e9b9529ed8e4638b2bd2fb76b3abeb">PlayerInfo</a>();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classPlayerInfo.html#a374ccbff75bab08aeed31414d90b27f1">   35</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classPlayerInfo.html#a374ccbff75bab08aeed31414d90b27f1">getSocketId</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classPlayerInfo.html#a114835061981731793b050c6ef75945a">   40</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPlayerInfo.html#a114835061981731793b050c6ef75945a">setSocketId</a>(<span class="keywordtype">int</span> socketId);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classPlayerInfo.html#ac5bb2bf41bf64b90df5dc5bbd8909074">   45</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="classPlayerInfo.html#ac5bb2bf41bf64b90df5dc5bbd8909074">getPointsGained</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classPlayerInfo.html#a6306de8303131a1f44246b52825119ce">   50</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPlayerInfo.html#a6306de8303131a1f44246b52825119ce">setPointsGained</a>(<span class="keywordtype">int</span> pointGained);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classPlayerInfo.html#a75b0634daef5de02bb100c5360fc2aed">   55</a></span>    <span class="keywordtype">void</span> *<a class="code hl_function" href="classPlayerInfo.html#a75b0634daef5de02bb100c5360fc2aed">getGameInfo</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classPlayerInfo.html#af556184c48c01980afcdbd90dfaef39e">   60</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPlayerInfo.html#af556184c48c01980afcdbd90dfaef39e">setGameInfo</a>(<span class="keywordtype">void</span> *gameInfo);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classPlayerInfo.html#a0fe5dc939933b02ad556c4c84f6bc863">   65</a></span>    <a class="code hl_class" href="classPlayerBar.html">PlayerBar</a> *<a class="code hl_function" href="classPlayerInfo.html#a0fe5dc939933b02ad556c4c84f6bc863">getPlayerBar</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classPlayerInfo.html#a51b3274b7435614b271820b10345e35e">   70</a></span>    <a class="code hl_class" href="classSocket.html">Socket</a> *<a class="code hl_function" href="classPlayerInfo.html#a51b3274b7435614b271820b10345e35e">getSocket</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="classPlayerInfo.html#ada4cefa574adfa9ae1ff27d201b00e61">   75</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPlayerInfo.html#ada4cefa574adfa9ae1ff27d201b00e61">setSocket</a>(<a class="code hl_class" href="classSocket.html">Socket</a> *socket);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>};</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#endif </span><span class="comment">//DATOSII_PROYECTOI_SERVER_PLAYERINFO_H</span></div>
+<div class="ttc" id="aclassPlayerBar_html"><div class="ttname"><a href="classPlayerBar.html">PlayerBar</a></div><div class="ttdoc">PlayerBar class used for setting player movement.</div><div class="ttdef"><b>Definition:</b> PlayerBar.h:16</div></div>
+<div class="ttc" id="aclassPlayerInfo_html"><div class="ttname"><a href="classPlayerInfo.html">PlayerInfo</a></div><div class="ttdoc">PlayerInfo class used for storing player information.</div><div class="ttdef"><b>Definition:</b> PlayerInfo.h:18</div></div>
 <div class="ttc" id="aclassPlayerInfo_html_a05e9b9529ed8e4638b2bd2fb76b3abeb"><div class="ttname"><a href="classPlayerInfo.html#a05e9b9529ed8e4638b2bd2fb76b3abeb">PlayerInfo::PlayerInfo</a></div><div class="ttdeci">PlayerInfo()</div></div>
 <div class="ttc" id="aclassPlayerInfo_html_a0fe5dc939933b02ad556c4c84f6bc863"><div class="ttname"><a href="classPlayerInfo.html#a0fe5dc939933b02ad556c4c84f6bc863">PlayerInfo::getPlayerBar</a></div><div class="ttdeci">PlayerBar * getPlayerBar() const</div></div>
 <div class="ttc" id="aclassPlayerInfo_html_a114835061981731793b050c6ef75945a"><div class="ttname"><a href="classPlayerInfo.html#a114835061981731793b050c6ef75945a">PlayerInfo::setSocketId</a></div><div class="ttdeci">void setSocketId(int socketId)</div></div>
@@ -114,7 +115,7 @@ $(function() {
 <div class="ttc" id="aclassPlayerInfo_html_ac5bb2bf41bf64b90df5dc5bbd8909074"><div class="ttname"><a href="classPlayerInfo.html#ac5bb2bf41bf64b90df5dc5bbd8909074">PlayerInfo::getPointsGained</a></div><div class="ttdeci">int getPointsGained() const</div></div>
 <div class="ttc" id="aclassPlayerInfo_html_ada4cefa574adfa9ae1ff27d201b00e61"><div class="ttname"><a href="classPlayerInfo.html#ada4cefa574adfa9ae1ff27d201b00e61">PlayerInfo::setSocket</a></div><div class="ttdeci">void setSocket(Socket *socket)</div></div>
 <div class="ttc" id="aclassPlayerInfo_html_af556184c48c01980afcdbd90dfaef39e"><div class="ttname"><a href="classPlayerInfo.html#af556184c48c01980afcdbd90dfaef39e">PlayerInfo::setGameInfo</a></div><div class="ttdeci">void setGameInfo(void *gameInfo)</div></div>
-<div class="ttc" id="aclassSocket_html"><div class="ttname"><a href="classSocket.html">Socket</a></div><div class="ttdef"><b>Definition:</b> Socket.h:27</div></div>
+<div class="ttc" id="aclassSocket_html"><div class="ttname"><a href="classSocket.html">Socket</a></div><div class="ttdef"><b>Definition:</b> Socket.h:34</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,0 +1,45 @@
+\hypertarget{GameInfo_8h_source}{}\doxysection{Game\+Info.\+h}
+\label{GameInfo_8h_source}\index{Headers/Breakout/GameInfo.h@{Headers/Breakout/GameInfo.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by cuadriante on 20/9/21.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#ifndef DATOSII\_PROYECTOI\_SERVER\_GAMEINFO\_H}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define DATOSII\_PROYECTOI\_SERVER\_GAMEINFO\_H}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}Block.h"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}Ball.h"{}}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include "{}../PlayerInfo.h"{}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classGameInfo}{GameInfo}} \{}
+\DoxyCodeLine{24 \textcolor{keyword}{private}:}
+\DoxyCodeLine{25     vector<PlayerInfo *> playerList; }
+\DoxyCodeLine{26     vector<Block *> blockList; }
+\DoxyCodeLine{27     \mbox{\hyperlink{classBall}{Ball}} * ball; }
+\DoxyCodeLine{28     \textcolor{keywordtype}{int} depthLevel = 0; }
+\DoxyCodeLine{30 \textcolor{keyword}{public}:}
+\DoxyCodeLine{34     \mbox{\hyperlink{classGameInfo_ae7ded63bd69b007847bd66debaeebc23}{GameInfo}}();}
+\DoxyCodeLine{39     \textcolor{keyword}{const} vector<Block *> \& \mbox{\hyperlink{classGameInfo_a4f57e66d1fe43fd4cd128305e621f706}{getBlockList}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{45     \mbox{\hyperlink{classBall}{Ball}} *\mbox{\hyperlink{classGameInfo_af8d90a349b37d1286f7a43141c00f2a0}{getBall}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{51     \textcolor{keyword}{const} vector<PlayerInfo *> \& \mbox{\hyperlink{classGameInfo_acfa68a0ca1dff359ce2aa4f015160f68}{getPlayerList}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGameInfo_aa1ba24180c0290840ee9bf617d17962d}{removePlayer}}(\mbox{\hyperlink{classPlayerInfo}{PlayerInfo}} * playerInfo);}
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGameInfo_a876868d04e1806414ac22e760a8c5ffd}{addPlayer}}(\mbox{\hyperlink{classPlayerInfo}{PlayerInfo}} * playerInfo);}
+\DoxyCodeLine{66     \textcolor{keywordtype}{int} \mbox{\hyperlink{classGameInfo_a41c11e3dcc20c7a0dd74c4204fdcfa3c}{getDepthLevel}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{71     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGameInfo_a12361cc5db095cbc17f66643a583133a}{setDepthLevel}}(\textcolor{keywordtype}{int} depthLevel);}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \};}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{comment}{//static GameInfo GAME\_SINGLETON;}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//DATOSII\_PROYECTOI\_SERVER\_GAMEINFO\_H}}
+
+\end{DoxyCode}

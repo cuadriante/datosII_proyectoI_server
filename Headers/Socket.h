@@ -2,6 +2,13 @@
 // Created by cuadriante on 2/9/21.
 //
 
+/** @brief Socket class used for communication within socket.
+
+    @author cuadriante
+    @date September 2021
+    */
+
+
 #ifndef DATOSII_PROYECTOI_SERVER_SOCKET_H
 #define DATOSII_PROYECTOI_SERVER_SOCKET_H
 

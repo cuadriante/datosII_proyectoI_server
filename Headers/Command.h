@@ -2,6 +2,13 @@
 // Created by cuadriante on 19/9/21.
 //
 
+/** @brief Command class used for communication between server and socket.
+
+    @author cuadriante
+    @date September 2021
+    */
+
+
 #ifndef DATOSII_PROYECTOI_SERVER_COMMAND_H
 #define DATOSII_PROYECTOI_SERVER_COMMAND_H
 

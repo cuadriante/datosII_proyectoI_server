@@ -1,0 +1,121 @@
+\hypertarget{classGameInfo}{}\doxysection{Game\+Info Class Reference}
+\label{classGameInfo}\index{GameInfo@{GameInfo}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGameInfo_ae7ded63bd69b007847bd66debaeebc23}{Game\+Info}} ()
+\item 
+const vector$<$ \mbox{\hyperlink{classBlock}{Block}} $\ast$ $>$ \& \mbox{\hyperlink{classGameInfo_a4f57e66d1fe43fd4cd128305e621f706}{get\+Block\+List}} () const
+\item 
+\mbox{\hyperlink{classBall}{Ball}} $\ast$ \mbox{\hyperlink{classGameInfo_af8d90a349b37d1286f7a43141c00f2a0}{get\+Ball}} () const
+\item 
+const vector$<$ \mbox{\hyperlink{classPlayerInfo}{Player\+Info}} $\ast$ $>$ \& \mbox{\hyperlink{classGameInfo_acfa68a0ca1dff359ce2aa4f015160f68}{get\+Player\+List}} () const
+\item 
+void \mbox{\hyperlink{classGameInfo_aa1ba24180c0290840ee9bf617d17962d}{remove\+Player}} (\mbox{\hyperlink{classPlayerInfo}{Player\+Info}} $\ast$player\+Info)
+\item 
+void \mbox{\hyperlink{classGameInfo_a876868d04e1806414ac22e760a8c5ffd}{add\+Player}} (\mbox{\hyperlink{classPlayerInfo}{Player\+Info}} $\ast$player\+Info)
+\item 
+int \mbox{\hyperlink{classGameInfo_a41c11e3dcc20c7a0dd74c4204fdcfa3c}{get\+Depth\+Level}} () const
+\item 
+void \mbox{\hyperlink{classGameInfo_a12361cc5db095cbc17f66643a583133a}{set\+Depth\+Level}} (int depth\+Level)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGameInfo_ae7ded63bd69b007847bd66debaeebc23}\label{classGameInfo_ae7ded63bd69b007847bd66debaeebc23}} 
+\index{GameInfo@{GameInfo}!GameInfo@{GameInfo}}
+\index{GameInfo@{GameInfo}!GameInfo@{GameInfo}}
+\doxysubsubsection{\texorpdfstring{GameInfo()}{GameInfo()}}
+{\footnotesize\ttfamily Game\+Info\+::\+Game\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor. Initializes game in client. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameInfo_a876868d04e1806414ac22e760a8c5ffd}\label{classGameInfo_a876868d04e1806414ac22e760a8c5ffd}} 
+\index{GameInfo@{GameInfo}!addPlayer@{addPlayer}}
+\index{addPlayer@{addPlayer}!GameInfo@{GameInfo}}
+\doxysubsubsection{\texorpdfstring{addPlayer()}{addPlayer()}}
+{\footnotesize\ttfamily void Game\+Info\+::add\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayerInfo}{Player\+Info}} $\ast$}]{player\+Info }\end{DoxyParamCaption})}
+
+Adds player to player information vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Info} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameInfo_af8d90a349b37d1286f7a43141c00f2a0}\label{classGameInfo_af8d90a349b37d1286f7a43141c00f2a0}} 
+\index{GameInfo@{GameInfo}!getBall@{getBall}}
+\index{getBall@{getBall}!GameInfo@{GameInfo}}
+\doxysubsubsection{\texorpdfstring{getBall()}{getBall()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBall}{Ball}} $\ast$ Game\+Info\+::get\+Ball (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns ball.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameInfo_a4f57e66d1fe43fd4cd128305e621f706}\label{classGameInfo_a4f57e66d1fe43fd4cd128305e621f706}} 
+\index{GameInfo@{GameInfo}!getBlockList@{getBlockList}}
+\index{getBlockList@{getBlockList}!GameInfo@{GameInfo}}
+\doxysubsubsection{\texorpdfstring{getBlockList()}{getBlockList()}}
+{\footnotesize\ttfamily const vector$<$ \mbox{\hyperlink{classBlock}{Block}} $\ast$ $>$ \& Game\+Info\+::get\+Block\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns block list vector.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameInfo_a41c11e3dcc20c7a0dd74c4204fdcfa3c}\label{classGameInfo_a41c11e3dcc20c7a0dd74c4204fdcfa3c}} 
+\index{GameInfo@{GameInfo}!getDepthLevel@{getDepthLevel}}
+\index{getDepthLevel@{getDepthLevel}!GameInfo@{GameInfo}}
+\doxysubsubsection{\texorpdfstring{getDepthLevel()}{getDepthLevel()}}
+{\footnotesize\ttfamily int Game\+Info\+::get\+Depth\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns current depth level.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameInfo_acfa68a0ca1dff359ce2aa4f015160f68}\label{classGameInfo_acfa68a0ca1dff359ce2aa4f015160f68}} 
+\index{GameInfo@{GameInfo}!getPlayerList@{getPlayerList}}
+\index{getPlayerList@{getPlayerList}!GameInfo@{GameInfo}}
+\doxysubsubsection{\texorpdfstring{getPlayerList()}{getPlayerList()}}
+{\footnotesize\ttfamily const vector$<$ \mbox{\hyperlink{classPlayerInfo}{Player\+Info}} $\ast$ $>$ \& Game\+Info\+::get\+Player\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns player information vector.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameInfo_aa1ba24180c0290840ee9bf617d17962d}\label{classGameInfo_aa1ba24180c0290840ee9bf617d17962d}} 
+\index{GameInfo@{GameInfo}!removePlayer@{removePlayer}}
+\index{removePlayer@{removePlayer}!GameInfo@{GameInfo}}
+\doxysubsubsection{\texorpdfstring{removePlayer()}{removePlayer()}}
+{\footnotesize\ttfamily void Game\+Info\+::remove\+Player (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPlayerInfo}{Player\+Info}} $\ast$}]{player\+Info }\end{DoxyParamCaption})}
+
+Removes player from connected clients.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Info} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameInfo_a12361cc5db095cbc17f66643a583133a}\label{classGameInfo_a12361cc5db095cbc17f66643a583133a}} 
+\index{GameInfo@{GameInfo}!setDepthLevel@{setDepthLevel}}
+\index{setDepthLevel@{setDepthLevel}!GameInfo@{GameInfo}}
+\doxysubsubsection{\texorpdfstring{setDepthLevel()}{setDepthLevel()}}
+{\footnotesize\ttfamily void Game\+Info\+::set\+Depth\+Level (\begin{DoxyParamCaption}\item[{int}]{depth\+Level }\end{DoxyParamCaption})}
+
+Sets depth level.
+
+
+\begin{DoxyParams}{Parameters}
+{\em depth\+Level} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Headers/\+Breakout/Game\+Info.\+h\end{DoxyCompactItemize}

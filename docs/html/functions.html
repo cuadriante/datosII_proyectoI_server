@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Datos II Proyecto I Server
+   <div id="projectname">Datos II Proyecto I Server<span id="projectnumber">&#160;0.1</span>
    </div>
   </td>
  </tr>
@@ -78,10 +78,12 @@ $(function() {
 <li>ACTION_SET_PLAYER_BAR_SIZE&#160;:&#160;<a class="el" href="classCommand.html#ad0b35b3408dd5a3eec841cdc1f9d5f15">Command</a></li>
 <li>ACTION_SET_SCORE&#160;:&#160;<a class="el" href="classCommand.html#a4e5512e4495c67b21452622623c652d9">Command</a></li>
 <li>ACTION_START_GAME&#160;:&#160;<a class="el" href="classCommand.html#aee33de69f704679c7f7b6a6b1c52e24d">Command</a></li>
+<li>addPlayer()&#160;:&#160;<a class="el" href="classGameInfo.html#a876868d04e1806414ac22e760a8c5ffd">GameInfo</a></li>
 </ul>
 
 
 <h3><a id="index_b" name="index_b"></a>- b -</h3><ul>
+<li>Block()&#160;:&#160;<a class="el" href="classBlock.html#a3a0391b2478630594ec9b099fc0d2729">Block</a></li>
 <li>BLOCK_TYPE_COMMON&#160;:&#160;<a class="el" href="classCommand.html#a322d732c31e18d1949af06fc39a57797">Command</a></li>
 <li>BLOCK_TYPE_DEEP&#160;:&#160;<a class="el" href="classCommand.html#a9f0c337350dc90045c6432cffbb8216c">Command</a></li>
 <li>BLOCK_TYPE_DOUBLE&#160;:&#160;<a class="el" href="classCommand.html#ad3315bedc7fa5a73edf3f54c1b5da7d4">Command</a></li>
@@ -92,18 +94,28 @@ $(function() {
 
 
 <h3><a id="index_g" name="index_g"></a>- g -</h3><ul>
+<li>GameInfo()&#160;:&#160;<a class="el" href="classGameInfo.html#ae7ded63bd69b007847bd66debaeebc23">GameInfo</a></li>
 <li>getAction()&#160;:&#160;<a class="el" href="classCommand.html#a4e77116d5c358139ebbf50177e0e657b">Command</a></li>
+<li>getBall()&#160;:&#160;<a class="el" href="classGameInfo.html#af8d90a349b37d1286f7a43141c00f2a0">GameInfo</a></li>
+<li>getBlockList()&#160;:&#160;<a class="el" href="classGameInfo.html#a4f57e66d1fe43fd4cd128305e621f706">GameInfo</a></li>
+<li>getDepthLevel()&#160;:&#160;<a class="el" href="classGameInfo.html#a41c11e3dcc20c7a0dd74c4204fdcfa3c">GameInfo</a></li>
 <li>getGameInfo()&#160;:&#160;<a class="el" href="classPlayerInfo.html#a75b0634daef5de02bb100c5360fc2aed">PlayerInfo</a></li>
-<li>getId()&#160;:&#160;<a class="el" href="classCommand.html#a977db092ca31a9581bc6d26b403cf52c">Command</a></li>
+<li>getHitsToBreak()&#160;:&#160;<a class="el" href="classBlock.html#afc05b6fd83f8c422e5e37b38bacf47f8">Block</a></li>
+<li>getId()&#160;:&#160;<a class="el" href="classBlock.html#a66d1517962d349882e133bbb86faca3b">Block</a>, <a class="el" href="classCommand.html#a977db092ca31a9581bc6d26b403cf52c">Command</a></li>
 <li>getName()&#160;:&#160;<a class="el" href="classCommand.html#af929824b031834ee5e059e13b6d676a5">Command</a></li>
 <li>getPlayerBar()&#160;:&#160;<a class="el" href="classPlayerInfo.html#a0fe5dc939933b02ad556c4c84f6bc863">PlayerInfo</a></li>
+<li>getPlayerList()&#160;:&#160;<a class="el" href="classGameInfo.html#acfa68a0ca1dff359ce2aa4f015160f68">GameInfo</a></li>
 <li>getPointsGained()&#160;:&#160;<a class="el" href="classPlayerInfo.html#ac5bb2bf41bf64b90df5dc5bbd8909074">PlayerInfo</a></li>
-<li>getPosX()&#160;:&#160;<a class="el" href="classCommand.html#a5f03b9d21ddc05695f29f9ccdd009818">Command</a></li>
-<li>getPosY()&#160;:&#160;<a class="el" href="classCommand.html#aa3b459f6bd217716c7f3317be349e1e5">Command</a></li>
-<li>getSize()&#160;:&#160;<a class="el" href="classCommand.html#a72aa21892c91bf154a9d444fd0af8172">Command</a></li>
+<li>getPosX()&#160;:&#160;<a class="el" href="classBlock.html#a675c2140c4b7bf7bc872afb0311285ab">Block</a>, <a class="el" href="classCommand.html#a5f03b9d21ddc05695f29f9ccdd009818">Command</a>, <a class="el" href="classPlayerBar.html#a0b35e0fd918b008f1e5f7dd133321b0c">PlayerBar</a></li>
+<li>getPosY()&#160;:&#160;<a class="el" href="classBlock.html#a6cac562e0a78fa94d0fb9e2e62f6f197">Block</a>, <a class="el" href="classCommand.html#aa3b459f6bd217716c7f3317be349e1e5">Command</a>, <a class="el" href="classPlayerBar.html#af7f93df13618ef5aaacc008aa98401d7">PlayerBar</a></li>
+<li>getSize()&#160;:&#160;<a class="el" href="classCommand.html#a72aa21892c91bf154a9d444fd0af8172">Command</a>, <a class="el" href="classPlayerBar.html#a6caac00d399cc80ba6c93c7d51a06286">PlayerBar</a></li>
 <li>getSocket()&#160;:&#160;<a class="el" href="classPlayerInfo.html#a51b3274b7435614b271820b10345e35e">PlayerInfo</a></li>
 <li>getSocketId()&#160;:&#160;<a class="el" href="classPlayerInfo.html#a374ccbff75bab08aeed31414d90b27f1">PlayerInfo</a></li>
-<li>getType()&#160;:&#160;<a class="el" href="classCommand.html#ab8e32706a7070054d419934d6a7939fa">Command</a></li>
+<li>getType()&#160;:&#160;<a class="el" href="classBlock.html#a08713ead505b9ba10d9351f392d308d0">Block</a>, <a class="el" href="classCommand.html#ab8e32706a7070054d419934d6a7939fa">Command</a></li>
+<li>getVx()&#160;:&#160;<a class="el" href="classBall.html#a151f4a73727db0b069c4dfd19b9305e8">Ball</a></li>
+<li>getVy()&#160;:&#160;<a class="el" href="classBall.html#a4a422b2f39edd1aa13e4145811ea3d7a">Ball</a></li>
+<li>getX()&#160;:&#160;<a class="el" href="classBall.html#a4e83a679af107ab274f07c3a828af902">Ball</a></li>
+<li>getY()&#160;:&#160;<a class="el" href="classBall.html#acab9e794905f104a7b33f3edb2c37298">Ball</a></li>
 </ul>
 
 
@@ -116,6 +128,7 @@ $(function() {
 <li>readCommand()&#160;:&#160;<a class="el" href="classSocket.html#a4309be3866a7f56a43caf0a5879dca0f">Socket</a></li>
 <li>readMessage()&#160;:&#160;<a class="el" href="classSocket.html#aef63194f6841603413389d2aeff64455">Socket</a></li>
 <li>readPtree()&#160;:&#160;<a class="el" href="classSocket.html#a92fa4c1ebed5c1af04fa188a4e5184e0">Socket</a></li>
+<li>removePlayer()&#160;:&#160;<a class="el" href="classGameInfo.html#aa1ba24180c0290840ee9bf617d17962d">GameInfo</a></li>
 </ul>
 
 
@@ -124,16 +137,25 @@ $(function() {
 <li>sendMessage()&#160;:&#160;<a class="el" href="classSocket.html#a6f17bae4398de7a7ab02b39e0a338bb1">Socket</a></li>
 <li>sendPtree()&#160;:&#160;<a class="el" href="classSocket.html#a722f7979278b3500bb56525dc43e230d">Socket</a></li>
 <li>setAction()&#160;:&#160;<a class="el" href="classCommand.html#a9339c08af15bb3542d7d64e5a74851f8">Command</a></li>
+<li>setDepthLevel()&#160;:&#160;<a class="el" href="classGameInfo.html#a12361cc5db095cbc17f66643a583133a">GameInfo</a></li>
 <li>setGameInfo()&#160;:&#160;<a class="el" href="classPlayerInfo.html#af556184c48c01980afcdbd90dfaef39e">PlayerInfo</a></li>
+<li>setHitsByType()&#160;:&#160;<a class="el" href="classBlock.html#a76846f85259c3aca155209b2439e7235">Block</a></li>
+<li>setHitsToBreak()&#160;:&#160;<a class="el" href="classBlock.html#aac828742244a7e5147124ac6bf4e1c58">Block</a></li>
 <li>setId()&#160;:&#160;<a class="el" href="classCommand.html#a2376d7e6bf082d184a23ca4c511996fd">Command</a></li>
 <li>setName()&#160;:&#160;<a class="el" href="classCommand.html#a5d09cb1f6182cf904f43103252c5ecff">Command</a></li>
 <li>setPointsGained()&#160;:&#160;<a class="el" href="classPlayerInfo.html#a6306de8303131a1f44246b52825119ce">PlayerInfo</a></li>
-<li>setPosX()&#160;:&#160;<a class="el" href="classCommand.html#aa9881397ea18df908d318692b8840c52">Command</a></li>
-<li>setPosY()&#160;:&#160;<a class="el" href="classCommand.html#af38de7c5f6f85e3ed315e47f09132313">Command</a></li>
-<li>setSize()&#160;:&#160;<a class="el" href="classCommand.html#a7e445f61fb2fa739147661c19e6ecc03">Command</a></li>
+<li>setPosx()&#160;:&#160;<a class="el" href="classBlock.html#a5a7683bde83bb7d03a518c190e71e70a">Block</a></li>
+<li>setPosX()&#160;:&#160;<a class="el" href="classCommand.html#aa9881397ea18df908d318692b8840c52">Command</a>, <a class="el" href="classPlayerBar.html#ae58ce614998fada6565b1ac209b3b6f3">PlayerBar</a></li>
+<li>setPosy()&#160;:&#160;<a class="el" href="classBlock.html#af74ecd2014c299323a5502959c622e00">Block</a></li>
+<li>setPosY()&#160;:&#160;<a class="el" href="classCommand.html#af38de7c5f6f85e3ed315e47f09132313">Command</a>, <a class="el" href="classPlayerBar.html#a75766d8bd607b0d79accb17fb41ac977">PlayerBar</a></li>
+<li>setSize()&#160;:&#160;<a class="el" href="classCommand.html#a7e445f61fb2fa739147661c19e6ecc03">Command</a>, <a class="el" href="classPlayerBar.html#aefb4a59475fd0b919759d6a1318a887d">PlayerBar</a></li>
 <li>setSocket()&#160;:&#160;<a class="el" href="classPlayerInfo.html#ada4cefa574adfa9ae1ff27d201b00e61">PlayerInfo</a></li>
 <li>setSocketId()&#160;:&#160;<a class="el" href="classPlayerInfo.html#a114835061981731793b050c6ef75945a">PlayerInfo</a></li>
 <li>setType()&#160;:&#160;<a class="el" href="classCommand.html#af74dc8726b3627196ed6ee05f942df6d">Command</a></li>
+<li>setVx()&#160;:&#160;<a class="el" href="classBall.html#aa0d910e7e4f6910173a3ed0dae9113c6">Ball</a></li>
+<li>setVy()&#160;:&#160;<a class="el" href="classBall.html#afa7988b90726f11fd58fe459c1617efe">Ball</a></li>
+<li>setX()&#160;:&#160;<a class="el" href="classBall.html#a5d04eeb954fbae050182d55c28782413">Ball</a></li>
+<li>setY()&#160;:&#160;<a class="el" href="classBall.html#a0223505ddeb32634ca0de4480475d091">Ball</a></li>
 <li>Socket()&#160;:&#160;<a class="el" href="classSocket.html#a6ebf9e5bb40310c76bf813a959b251bf">Socket</a></li>
 <li>start()&#160;:&#160;<a class="el" href="classServerListener.html#a3c477459e4518413ca1fcf6761ecf886">ServerListener</a></li>
 <li>startPLayerSession()&#160;:&#160;<a class="el" href="classServerListener.html#a3a2adab1c2407fb30936c8300ac13747">ServerListener</a></li>

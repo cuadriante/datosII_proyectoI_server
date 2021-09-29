@@ -2,6 +2,12 @@
 // Created by cuadriante on 25/9/21.
 //
 
+/** @brief PlayerInfo class used for storing player information.
+
+    @author cuadriante
+    @date September 2021
+    */
+
 #ifndef DATOSII_PROYECTOI_SERVER_PLAYERINFO_H
 #define DATOSII_PROYECTOI_SERVER_PLAYERINFO_H
 

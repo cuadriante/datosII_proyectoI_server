@@ -2,6 +2,13 @@
 // Created by cuadriante on 25/9/21.
 //
 
+/** @brief PlayerBar class used for setting player movement.
+
+    @author cuadriante
+    @date September 2021
+    */
+
+
 #ifndef DATOSII_PROYECTOI_SERVER_PLAYERBAR_H
 #define DATOSII_PROYECTOI_SERVER_PLAYERBAR_H
 
