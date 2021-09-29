@@ -1,0 +1,62 @@
+\hypertarget{classServerListener}{}\doxysection{Server\+Listener Class Reference}
+\label{classServerListener}\index{ServerListener@{ServerListener}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classServerListener_a3c477459e4518413ca1fcf6761ecf886}{start}} ()
+\item 
+void \mbox{\hyperlink{classServerListener_a92a5635895a05121a8efc79f4f1e74e8}{wait\+For\+Connections}} (Game\+Info $\ast$game\+Info)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void $\ast$ \mbox{\hyperlink{classServerListener_a3a2adab1c2407fb30936c8300ac13747}{start\+PLayer\+Session}} (void $\ast$pplayer\+Info)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classServerListener_a3c477459e4518413ca1fcf6761ecf886}\label{classServerListener_a3c477459e4518413ca1fcf6761ecf886}} 
+\index{ServerListener@{ServerListener}!start@{start}}
+\index{start@{start}!ServerListener@{ServerListener}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily bool Server\+Listener\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sets and binds socket kernel.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classServerListener_a3a2adab1c2407fb30936c8300ac13747}\label{classServerListener_a3a2adab1c2407fb30936c8300ac13747}} 
+\index{ServerListener@{ServerListener}!startPLayerSession@{startPLayerSession}}
+\index{startPLayerSession@{startPLayerSession}!ServerListener@{ServerListener}}
+\doxysubsubsection{\texorpdfstring{startPLayerSession()}{startPLayerSession()}}
+{\footnotesize\ttfamily static void $\ast$ Server\+Listener\+::start\+PLayer\+Session (\begin{DoxyParamCaption}\item[{void $\ast$}]{pplayer\+Info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Starts game in client socket if succesfully connected.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pplayer\+Info} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classServerListener_a92a5635895a05121a8efc79f4f1e74e8}\label{classServerListener_a92a5635895a05121a8efc79f4f1e74e8}} 
+\index{ServerListener@{ServerListener}!waitForConnections@{waitForConnections}}
+\index{waitForConnections@{waitForConnections}!ServerListener@{ServerListener}}
+\doxysubsubsection{\texorpdfstring{waitForConnections()}{waitForConnections()}}
+{\footnotesize\ttfamily void Server\+Listener\+::wait\+For\+Connections (\begin{DoxyParamCaption}\item[{Game\+Info $\ast$}]{game\+Info }\end{DoxyParamCaption})}
+
+Waits for client socket to connect and starts game if successful.
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Info} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Headers/Server\+Listener.\+h\end{DoxyCompactItemize}

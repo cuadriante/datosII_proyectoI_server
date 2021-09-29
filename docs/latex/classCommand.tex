@@ -1,0 +1,370 @@
+\hypertarget{classCommand}{}\doxysection{Command Class Reference}
+\label{classCommand}\index{Command@{Command}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classCommand_a9339c08af15bb3542d7d64e5a74851f8}{set\+Action}} (int action)
+\item 
+void \mbox{\hyperlink{classCommand_aa9881397ea18df908d318692b8840c52}{set\+PosX}} (int new\+PlayerX)
+\item 
+int \mbox{\hyperlink{classCommand_a4e77116d5c358139ebbf50177e0e657b}{get\+Action}} ()
+\item 
+int \mbox{\hyperlink{classCommand_a5f03b9d21ddc05695f29f9ccdd009818}{get\+PosX}} ()
+\item 
+int \mbox{\hyperlink{classCommand_ab8e32706a7070054d419934d6a7939fa}{get\+Type}} () const
+\item 
+int \mbox{\hyperlink{classCommand_aa3b459f6bd217716c7f3317be349e1e5}{get\+PosY}} () const
+\item 
+void \mbox{\hyperlink{classCommand_af38de7c5f6f85e3ed315e47f09132313}{set\+PosY}} (int posY)
+\item 
+void \mbox{\hyperlink{classCommand_af74dc8726b3627196ed6ee05f942df6d}{set\+Type}} (int type)
+\item 
+const string \& \mbox{\hyperlink{classCommand_af929824b031834ee5e059e13b6d676a5}{get\+Name}} () const
+\item 
+void \mbox{\hyperlink{classCommand_a5d09cb1f6182cf904f43103252c5ecff}{set\+Name}} (const string \&name)
+\item 
+int \mbox{\hyperlink{classCommand_a72aa21892c91bf154a9d444fd0af8172}{get\+Size}} () const
+\item 
+void \mbox{\hyperlink{classCommand_a7e445f61fb2fa739147661c19e6ecc03}{set\+Size}} (int size)
+\item 
+int \mbox{\hyperlink{classCommand_a977db092ca31a9581bc6d26b403cf52c}{get\+Id}} () const
+\item 
+void \mbox{\hyperlink{classCommand_a2376d7e6bf082d184a23ca4c511996fd}{set\+Id}} (int id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCommand_a2fa8827887b8e2d753b952f91b90c573}\label{classCommand_a2fa8827887b8e2d753b952f91b90c573}} 
+static const int {\bfseries ACTION\+\_\+\+NONE} = 0
+\item 
+static const int \mbox{\hyperlink{classCommand_a1a6b3a7dd0f8bb88bd9114f9ebde92de}{ACTION\+\_\+\+CREATE\+\_\+\+PLAYER}} = 10
+\item 
+static const int \mbox{\hyperlink{classCommand_a456a2ae02748b18ff9ed8c451df21900}{ACTION\+\_\+\+MOVE\+\_\+\+PLAYER}} = 11
+\item 
+static const int \mbox{\hyperlink{classCommand_aceed989a9d23301313601c5b55fb58b0}{ACTION\+\_\+\+MOVE\+\_\+\+BALL}} = 12
+\item 
+static const int \mbox{\hyperlink{classCommand_a72ebd9a8d1624e7904ebee1566314d6e}{ACTION\+\_\+\+MOVE\+\_\+\+BLOCK}} = 13
+\item 
+static const int \mbox{\hyperlink{classCommand_aa72194492016fe7310ce347274092523}{ACTION\+\_\+\+DELETE\+\_\+\+BLOCK}} = 14
+\item 
+static const int \mbox{\hyperlink{classCommand_a4e5512e4495c67b21452622623c652d9}{ACTION\+\_\+\+SET\+\_\+\+SCORE}} = 15
+\item 
+static const int \mbox{\hyperlink{classCommand_a7ab4fb74a8d1c4852166c7e0c18eb81d}{ACTION\+\_\+\+CREATE\+\_\+\+BLOCK}} = 16
+\item 
+static const int \mbox{\hyperlink{classCommand_a567caf569156379277f22c954fbee065}{ACTION\+\_\+\+SET\+\_\+\+DEPTH\+\_\+\+LEVEL}} = 17
+\item 
+static const int \mbox{\hyperlink{classCommand_ad0b35b3408dd5a3eec841cdc1f9d5f15}{ACTION\+\_\+\+SET\+\_\+\+PLAYER\+\_\+\+BAR\+\_\+\+SIZE}} = 18
+\item 
+static const int \mbox{\hyperlink{classCommand_aee33de69f704679c7f7b6a6b1c52e24d}{ACTION\+\_\+\+START\+\_\+\+GAME}} = 20
+\item 
+static const int \mbox{\hyperlink{classCommand_a3d846d3d89f911b1a716d676b849eb2a}{ACTION\+\_\+\+MOVE\+\_\+\+LEFT}} = 21
+\item 
+static const int \mbox{\hyperlink{classCommand_ac7c7e7fecf78684e4fd709118e4cab14}{ACTION\+\_\+\+MOVE\+\_\+\+RIGHT}} = 22
+\item 
+static const int \mbox{\hyperlink{classCommand_a45c67e378ca20767cc28819d9753d9ff}{ACTION\+\_\+\+END\+\_\+\+GAME}} = 23
+\item 
+static const int \mbox{\hyperlink{classCommand_a322d732c31e18d1949af06fc39a57797}{BLOCK\+\_\+\+TYPE\+\_\+\+COMMON}} = 31
+\item 
+static const int \mbox{\hyperlink{classCommand_ad3315bedc7fa5a73edf3f54c1b5da7d4}{BLOCK\+\_\+\+TYPE\+\_\+\+DOUBLE}} = 32
+\item 
+static const int \mbox{\hyperlink{classCommand_a27b5cf7fb83aebffe6150e1975327e47}{BLOCK\+\_\+\+TYPE\+\_\+\+TRIPLE}} = 33
+\item 
+static const int \mbox{\hyperlink{classCommand_a3f023dfbb5d271014f2a8111ce5ca43d}{BLOCK\+\_\+\+TYPE\+\_\+\+INTERNAL}} = 34
+\item 
+static const int \mbox{\hyperlink{classCommand_a9f0c337350dc90045c6432cffbb8216c}{BLOCK\+\_\+\+TYPE\+\_\+\+DEEP}} = 35
+\item 
+static const int \mbox{\hyperlink{classCommand_a21d7a529d1d6316289b672a39c9137f0}{BLOCK\+\_\+\+TYPE\+\_\+\+SURPRISE}} = 36
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCommand_a4e77116d5c358139ebbf50177e0e657b}\label{classCommand_a4e77116d5c358139ebbf50177e0e657b}} 
+\index{Command@{Command}!getAction@{getAction}}
+\index{getAction@{getAction}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{getAction()}{getAction()}}
+{\footnotesize\ttfamily int Command\+::get\+Action (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns action.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCommand_a977db092ca31a9581bc6d26b403cf52c}\label{classCommand_a977db092ca31a9581bc6d26b403cf52c}} 
+\index{Command@{Command}!getId@{getId}}
+\index{getId@{getId}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily int Command\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns id.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCommand_af929824b031834ee5e059e13b6d676a5}\label{classCommand_af929824b031834ee5e059e13b6d676a5}} 
+\index{Command@{Command}!getName@{getName}}
+\index{getName@{getName}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily const string \& Command\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns name.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCommand_a5f03b9d21ddc05695f29f9ccdd009818}\label{classCommand_a5f03b9d21ddc05695f29f9ccdd009818}} 
+\index{Command@{Command}!getPosX@{getPosX}}
+\index{getPosX@{getPosX}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{getPosX()}{getPosX()}}
+{\footnotesize\ttfamily int Command\+::get\+PosX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Returns position in y.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCommand_aa3b459f6bd217716c7f3317be349e1e5}\label{classCommand_aa3b459f6bd217716c7f3317be349e1e5}} 
+\index{Command@{Command}!getPosY@{getPosY}}
+\index{getPosY@{getPosY}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{getPosY()}{getPosY()}}
+{\footnotesize\ttfamily int Command\+::get\+PosY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns position in y.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCommand_a72aa21892c91bf154a9d444fd0af8172}\label{classCommand_a72aa21892c91bf154a9d444fd0af8172}} 
+\index{Command@{Command}!getSize@{getSize}}
+\index{getSize@{getSize}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily int Command\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns size.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCommand_ab8e32706a7070054d419934d6a7939fa}\label{classCommand_ab8e32706a7070054d419934d6a7939fa}} 
+\index{Command@{Command}!getType@{getType}}
+\index{getType@{getType}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily int Command\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns type.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCommand_a9339c08af15bb3542d7d64e5a74851f8}\label{classCommand_a9339c08af15bb3542d7d64e5a74851f8}} 
+\index{Command@{Command}!setAction@{setAction}}
+\index{setAction@{setAction}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{setAction()}{setAction()}}
+{\footnotesize\ttfamily void Command\+::set\+Action (\begin{DoxyParamCaption}\item[{int}]{action }\end{DoxyParamCaption})}
+
+Sets action.
+
+
+\begin{DoxyParams}{Parameters}
+{\em action} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCommand_a2376d7e6bf082d184a23ca4c511996fd}\label{classCommand_a2376d7e6bf082d184a23ca4c511996fd}} 
+\index{Command@{Command}!setId@{setId}}
+\index{setId@{setId}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily void Command\+::set\+Id (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+Sets id.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCommand_a5d09cb1f6182cf904f43103252c5ecff}\label{classCommand_a5d09cb1f6182cf904f43103252c5ecff}} 
+\index{Command@{Command}!setName@{setName}}
+\index{setName@{setName}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void Command\+::set\+Name (\begin{DoxyParamCaption}\item[{const string \&}]{name }\end{DoxyParamCaption})}
+
+Sets name.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCommand_aa9881397ea18df908d318692b8840c52}\label{classCommand_aa9881397ea18df908d318692b8840c52}} 
+\index{Command@{Command}!setPosX@{setPosX}}
+\index{setPosX@{setPosX}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{setPosX()}{setPosX()}}
+{\footnotesize\ttfamily void Command\+::set\+PosX (\begin{DoxyParamCaption}\item[{int}]{new\+PlayerX }\end{DoxyParamCaption})}
+
+Sets position in X.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+PlayerX} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCommand_af38de7c5f6f85e3ed315e47f09132313}\label{classCommand_af38de7c5f6f85e3ed315e47f09132313}} 
+\index{Command@{Command}!setPosY@{setPosY}}
+\index{setPosY@{setPosY}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{setPosY()}{setPosY()}}
+{\footnotesize\ttfamily void Command\+::set\+PosY (\begin{DoxyParamCaption}\item[{int}]{posY }\end{DoxyParamCaption})}
+
+Sets position in Y.
+
+
+\begin{DoxyParams}{Parameters}
+{\em posY} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCommand_a7e445f61fb2fa739147661c19e6ecc03}\label{classCommand_a7e445f61fb2fa739147661c19e6ecc03}} 
+\index{Command@{Command}!setSize@{setSize}}
+\index{setSize@{setSize}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{setSize()}{setSize()}}
+{\footnotesize\ttfamily void Command\+::set\+Size (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})}
+
+Sets size.
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCommand_af74dc8726b3627196ed6ee05f942df6d}\label{classCommand_af74dc8726b3627196ed6ee05f942df6d}} 
+\index{Command@{Command}!setType@{setType}}
+\index{setType@{setType}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{setType()}{setType()}}
+{\footnotesize\ttfamily void Command\+::set\+Type (\begin{DoxyParamCaption}\item[{int}]{type }\end{DoxyParamCaption})}
+
+Sets type.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classCommand_a7ab4fb74a8d1c4852166c7e0c18eb81d}\label{classCommand_a7ab4fb74a8d1c4852166c7e0c18eb81d}} 
+\index{Command@{Command}!ACTION\_CREATE\_BLOCK@{ACTION\_CREATE\_BLOCK}}
+\index{ACTION\_CREATE\_BLOCK@{ACTION\_CREATE\_BLOCK}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{ACTION\_CREATE\_BLOCK}{ACTION\_CREATE\_BLOCK}}
+{\footnotesize\ttfamily const int Command\+::\+ACTION\+\_\+\+CREATE\+\_\+\+BLOCK = 16\hspace{0.3cm}{\ttfamily [static]}}
+
+action for block creation \mbox{\Hypertarget{classCommand_a1a6b3a7dd0f8bb88bd9114f9ebde92de}\label{classCommand_a1a6b3a7dd0f8bb88bd9114f9ebde92de}} 
+\index{Command@{Command}!ACTION\_CREATE\_PLAYER@{ACTION\_CREATE\_PLAYER}}
+\index{ACTION\_CREATE\_PLAYER@{ACTION\_CREATE\_PLAYER}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{ACTION\_CREATE\_PLAYER}{ACTION\_CREATE\_PLAYER}}
+{\footnotesize\ttfamily const int Command\+::\+ACTION\+\_\+\+CREATE\+\_\+\+PLAYER = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+action for player creation \mbox{\Hypertarget{classCommand_aa72194492016fe7310ce347274092523}\label{classCommand_aa72194492016fe7310ce347274092523}} 
+\index{Command@{Command}!ACTION\_DELETE\_BLOCK@{ACTION\_DELETE\_BLOCK}}
+\index{ACTION\_DELETE\_BLOCK@{ACTION\_DELETE\_BLOCK}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{ACTION\_DELETE\_BLOCK}{ACTION\_DELETE\_BLOCK}}
+{\footnotesize\ttfamily const int Command\+::\+ACTION\+\_\+\+DELETE\+\_\+\+BLOCK = 14\hspace{0.3cm}{\ttfamily [static]}}
+
+action for block deletion \mbox{\Hypertarget{classCommand_a45c67e378ca20767cc28819d9753d9ff}\label{classCommand_a45c67e378ca20767cc28819d9753d9ff}} 
+\index{Command@{Command}!ACTION\_END\_GAME@{ACTION\_END\_GAME}}
+\index{ACTION\_END\_GAME@{ACTION\_END\_GAME}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{ACTION\_END\_GAME}{ACTION\_END\_GAME}}
+{\footnotesize\ttfamily const int Command\+::\+ACTION\+\_\+\+END\+\_\+\+GAME = 23\hspace{0.3cm}{\ttfamily [static]}}
+
+action for game end \mbox{\Hypertarget{classCommand_aceed989a9d23301313601c5b55fb58b0}\label{classCommand_aceed989a9d23301313601c5b55fb58b0}} 
+\index{Command@{Command}!ACTION\_MOVE\_BALL@{ACTION\_MOVE\_BALL}}
+\index{ACTION\_MOVE\_BALL@{ACTION\_MOVE\_BALL}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{ACTION\_MOVE\_BALL}{ACTION\_MOVE\_BALL}}
+{\footnotesize\ttfamily const int Command\+::\+ACTION\+\_\+\+MOVE\+\_\+\+BALL = 12\hspace{0.3cm}{\ttfamily [static]}}
+
+action for ball movement \mbox{\Hypertarget{classCommand_a72ebd9a8d1624e7904ebee1566314d6e}\label{classCommand_a72ebd9a8d1624e7904ebee1566314d6e}} 
+\index{Command@{Command}!ACTION\_MOVE\_BLOCK@{ACTION\_MOVE\_BLOCK}}
+\index{ACTION\_MOVE\_BLOCK@{ACTION\_MOVE\_BLOCK}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{ACTION\_MOVE\_BLOCK}{ACTION\_MOVE\_BLOCK}}
+{\footnotesize\ttfamily const int Command\+::\+ACTION\+\_\+\+MOVE\+\_\+\+BLOCK = 13\hspace{0.3cm}{\ttfamily [static]}}
+
+action for block movement \mbox{\Hypertarget{classCommand_a3d846d3d89f911b1a716d676b849eb2a}\label{classCommand_a3d846d3d89f911b1a716d676b849eb2a}} 
+\index{Command@{Command}!ACTION\_MOVE\_LEFT@{ACTION\_MOVE\_LEFT}}
+\index{ACTION\_MOVE\_LEFT@{ACTION\_MOVE\_LEFT}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{ACTION\_MOVE\_LEFT}{ACTION\_MOVE\_LEFT}}
+{\footnotesize\ttfamily const int Command\+::\+ACTION\+\_\+\+MOVE\+\_\+\+LEFT = 21\hspace{0.3cm}{\ttfamily [static]}}
+
+action for player movement to the left \mbox{\Hypertarget{classCommand_a456a2ae02748b18ff9ed8c451df21900}\label{classCommand_a456a2ae02748b18ff9ed8c451df21900}} 
+\index{Command@{Command}!ACTION\_MOVE\_PLAYER@{ACTION\_MOVE\_PLAYER}}
+\index{ACTION\_MOVE\_PLAYER@{ACTION\_MOVE\_PLAYER}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{ACTION\_MOVE\_PLAYER}{ACTION\_MOVE\_PLAYER}}
+{\footnotesize\ttfamily const int Command\+::\+ACTION\+\_\+\+MOVE\+\_\+\+PLAYER = 11\hspace{0.3cm}{\ttfamily [static]}}
+
+action for player movement \mbox{\Hypertarget{classCommand_ac7c7e7fecf78684e4fd709118e4cab14}\label{classCommand_ac7c7e7fecf78684e4fd709118e4cab14}} 
+\index{Command@{Command}!ACTION\_MOVE\_RIGHT@{ACTION\_MOVE\_RIGHT}}
+\index{ACTION\_MOVE\_RIGHT@{ACTION\_MOVE\_RIGHT}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{ACTION\_MOVE\_RIGHT}{ACTION\_MOVE\_RIGHT}}
+{\footnotesize\ttfamily const int Command\+::\+ACTION\+\_\+\+MOVE\+\_\+\+RIGHT = 22\hspace{0.3cm}{\ttfamily [static]}}
+
+action for player movement to the right \mbox{\Hypertarget{classCommand_a567caf569156379277f22c954fbee065}\label{classCommand_a567caf569156379277f22c954fbee065}} 
+\index{Command@{Command}!ACTION\_SET\_DEPTH\_LEVEL@{ACTION\_SET\_DEPTH\_LEVEL}}
+\index{ACTION\_SET\_DEPTH\_LEVEL@{ACTION\_SET\_DEPTH\_LEVEL}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{ACTION\_SET\_DEPTH\_LEVEL}{ACTION\_SET\_DEPTH\_LEVEL}}
+{\footnotesize\ttfamily const int Command\+::\+ACTION\+\_\+\+SET\+\_\+\+DEPTH\+\_\+\+LEVEL = 17\hspace{0.3cm}{\ttfamily [static]}}
+
+action for depth level setting \mbox{\Hypertarget{classCommand_ad0b35b3408dd5a3eec841cdc1f9d5f15}\label{classCommand_ad0b35b3408dd5a3eec841cdc1f9d5f15}} 
+\index{Command@{Command}!ACTION\_SET\_PLAYER\_BAR\_SIZE@{ACTION\_SET\_PLAYER\_BAR\_SIZE}}
+\index{ACTION\_SET\_PLAYER\_BAR\_SIZE@{ACTION\_SET\_PLAYER\_BAR\_SIZE}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{ACTION\_SET\_PLAYER\_BAR\_SIZE}{ACTION\_SET\_PLAYER\_BAR\_SIZE}}
+{\footnotesize\ttfamily const int Command\+::\+ACTION\+\_\+\+SET\+\_\+\+PLAYER\+\_\+\+BAR\+\_\+\+SIZE = 18\hspace{0.3cm}{\ttfamily [static]}}
+
+action for player bar size setting \mbox{\Hypertarget{classCommand_a4e5512e4495c67b21452622623c652d9}\label{classCommand_a4e5512e4495c67b21452622623c652d9}} 
+\index{Command@{Command}!ACTION\_SET\_SCORE@{ACTION\_SET\_SCORE}}
+\index{ACTION\_SET\_SCORE@{ACTION\_SET\_SCORE}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{ACTION\_SET\_SCORE}{ACTION\_SET\_SCORE}}
+{\footnotesize\ttfamily const int Command\+::\+ACTION\+\_\+\+SET\+\_\+\+SCORE = 15\hspace{0.3cm}{\ttfamily [static]}}
+
+action for score setting \mbox{\Hypertarget{classCommand_aee33de69f704679c7f7b6a6b1c52e24d}\label{classCommand_aee33de69f704679c7f7b6a6b1c52e24d}} 
+\index{Command@{Command}!ACTION\_START\_GAME@{ACTION\_START\_GAME}}
+\index{ACTION\_START\_GAME@{ACTION\_START\_GAME}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{ACTION\_START\_GAME}{ACTION\_START\_GAME}}
+{\footnotesize\ttfamily const int Command\+::\+ACTION\+\_\+\+START\+\_\+\+GAME = 20\hspace{0.3cm}{\ttfamily [static]}}
+
+action for game start \mbox{\Hypertarget{classCommand_a322d732c31e18d1949af06fc39a57797}\label{classCommand_a322d732c31e18d1949af06fc39a57797}} 
+\index{Command@{Command}!BLOCK\_TYPE\_COMMON@{BLOCK\_TYPE\_COMMON}}
+\index{BLOCK\_TYPE\_COMMON@{BLOCK\_TYPE\_COMMON}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{BLOCK\_TYPE\_COMMON}{BLOCK\_TYPE\_COMMON}}
+{\footnotesize\ttfamily const int Command\+::\+BLOCK\+\_\+\+TYPE\+\_\+\+COMMON = 31\hspace{0.3cm}{\ttfamily [static]}}
+
+action for common block \mbox{\Hypertarget{classCommand_a9f0c337350dc90045c6432cffbb8216c}\label{classCommand_a9f0c337350dc90045c6432cffbb8216c}} 
+\index{Command@{Command}!BLOCK\_TYPE\_DEEP@{BLOCK\_TYPE\_DEEP}}
+\index{BLOCK\_TYPE\_DEEP@{BLOCK\_TYPE\_DEEP}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{BLOCK\_TYPE\_DEEP}{BLOCK\_TYPE\_DEEP}}
+{\footnotesize\ttfamily const int Command\+::\+BLOCK\+\_\+\+TYPE\+\_\+\+DEEP = 35\hspace{0.3cm}{\ttfamily [static]}}
+
+action for deep block \mbox{\Hypertarget{classCommand_ad3315bedc7fa5a73edf3f54c1b5da7d4}\label{classCommand_ad3315bedc7fa5a73edf3f54c1b5da7d4}} 
+\index{Command@{Command}!BLOCK\_TYPE\_DOUBLE@{BLOCK\_TYPE\_DOUBLE}}
+\index{BLOCK\_TYPE\_DOUBLE@{BLOCK\_TYPE\_DOUBLE}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{BLOCK\_TYPE\_DOUBLE}{BLOCK\_TYPE\_DOUBLE}}
+{\footnotesize\ttfamily const int Command\+::\+BLOCK\+\_\+\+TYPE\+\_\+\+DOUBLE = 32\hspace{0.3cm}{\ttfamily [static]}}
+
+action for double block \mbox{\Hypertarget{classCommand_a3f023dfbb5d271014f2a8111ce5ca43d}\label{classCommand_a3f023dfbb5d271014f2a8111ce5ca43d}} 
+\index{Command@{Command}!BLOCK\_TYPE\_INTERNAL@{BLOCK\_TYPE\_INTERNAL}}
+\index{BLOCK\_TYPE\_INTERNAL@{BLOCK\_TYPE\_INTERNAL}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{BLOCK\_TYPE\_INTERNAL}{BLOCK\_TYPE\_INTERNAL}}
+{\footnotesize\ttfamily const int Command\+::\+BLOCK\+\_\+\+TYPE\+\_\+\+INTERNAL = 34\hspace{0.3cm}{\ttfamily [static]}}
+
+action for internal block \mbox{\Hypertarget{classCommand_a21d7a529d1d6316289b672a39c9137f0}\label{classCommand_a21d7a529d1d6316289b672a39c9137f0}} 
+\index{Command@{Command}!BLOCK\_TYPE\_SURPRISE@{BLOCK\_TYPE\_SURPRISE}}
+\index{BLOCK\_TYPE\_SURPRISE@{BLOCK\_TYPE\_SURPRISE}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{BLOCK\_TYPE\_SURPRISE}{BLOCK\_TYPE\_SURPRISE}}
+{\footnotesize\ttfamily const int Command\+::\+BLOCK\+\_\+\+TYPE\+\_\+\+SURPRISE = 36\hspace{0.3cm}{\ttfamily [static]}}
+
+action for surprise block \mbox{\Hypertarget{classCommand_a27b5cf7fb83aebffe6150e1975327e47}\label{classCommand_a27b5cf7fb83aebffe6150e1975327e47}} 
+\index{Command@{Command}!BLOCK\_TYPE\_TRIPLE@{BLOCK\_TYPE\_TRIPLE}}
+\index{BLOCK\_TYPE\_TRIPLE@{BLOCK\_TYPE\_TRIPLE}!Command@{Command}}
+\doxysubsubsection{\texorpdfstring{BLOCK\_TYPE\_TRIPLE}{BLOCK\_TYPE\_TRIPLE}}
+{\footnotesize\ttfamily const int Command\+::\+BLOCK\+\_\+\+TYPE\+\_\+\+TRIPLE = 33\hspace{0.3cm}{\ttfamily [static]}}
+
+action for triple block 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Headers/Command.\+h\end{DoxyCompactItemize}

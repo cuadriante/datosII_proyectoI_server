@@ -1,0 +1,43 @@
+\hypertarget{ServerListener_8h_source}{}\doxysection{Server\+Listener.\+h}
+\label{ServerListener_8h_source}\index{Headers/ServerListener.h@{Headers/ServerListener.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by cuadriante on 14/9/21.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef DATOSII\_PROYECTOI\_SERVER\_SERVERLISTENER\_H}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define DATOSII\_PROYECTOI\_SERVER\_SERVERLISTENER\_H}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <sys/socket.h>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <sys/types.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <netdb.h>} \textcolor{comment}{//librerias para red}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <pthread.h>} \textcolor{comment}{// threads for multiprogramming}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <vector>} \textcolor{comment}{//para almacenar varios clientes}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <unistd.h>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <boost/property\_tree/ptree.hpp>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <boost/property\_tree//json\_parser.hpp>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}Breakout/GameInfo.h"{}}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{classServerListener}{ServerListener}} \{}
+\DoxyCodeLine{24 \textcolor{keyword}{private}:}
+\DoxyCodeLine{25     \textcolor{keywordtype}{int} serverSocketId; }
+\DoxyCodeLine{26     \textcolor{keyword}{struct }sockaddr\_in serverSocketInfo; }
+\DoxyCodeLine{27     \textcolor{keywordtype}{int} serverSocketInfoLen = \textcolor{keyword}{sizeof}(serverSocketInfo); }
+\DoxyCodeLine{28     \textcolor{keywordtype}{int} serverSocketPort = 4050; }
+\DoxyCodeLine{29     \textcolor{keywordtype}{int} maxConnectedClients = 5; }
+\DoxyCodeLine{30 \textcolor{keyword}{public}:}
+\DoxyCodeLine{35     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classServerListener_a3c477459e4518413ca1fcf6761ecf886}{start}}();}
+\DoxyCodeLine{40     [[noreturn]] \textcolor{keywordtype}{void} \mbox{\hyperlink{classServerListener_a92a5635895a05121a8efc79f4f1e74e8}{waitForConnections}}(GameInfo *gameInfo);}
+\DoxyCodeLine{46     [[noreturn]] \textcolor{keyword}{static} \textcolor{keywordtype}{void} * \mbox{\hyperlink{classServerListener_a3a2adab1c2407fb30936c8300ac13747}{startPLayerSession}}(\textcolor{keywordtype}{void} * pplayerInfo);}
+\DoxyCodeLine{47 \};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//DATOSII\_PROYECTOI\_SERVER\_SERVERLISTENER\_H}}
+
+\end{DoxyCode}

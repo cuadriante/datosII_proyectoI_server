@@ -1,0 +1,40 @@
+\hypertarget{PlayerInfo_8h_source}{}\doxysection{Player\+Info.\+h}
+\label{PlayerInfo_8h_source}\index{Headers/PlayerInfo.h@{Headers/PlayerInfo.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by cuadriante on 25/9/21.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef DATOSII\_PROYECTOI\_SERVER\_PLAYERINFO\_H}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define DATOSII\_PROYECTOI\_SERVER\_PLAYERINFO\_H}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}Breakout/PlayerBar.h"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}Socket.h"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{classPlayerInfo}{PlayerInfo}} \{}
+\DoxyCodeLine{13 \textcolor{keyword}{private}:}
+\DoxyCodeLine{14     \textcolor{keywordtype}{int} socketId; }
+\DoxyCodeLine{15     \textcolor{keywordtype}{int} pointsGained = 0; }
+\DoxyCodeLine{16     \textcolor{keywordtype}{void} * gameInfo; }
+\DoxyCodeLine{17     PlayerBar * playerBar; }
+\DoxyCodeLine{18     \mbox{\hyperlink{classSocket}{Socket}} * socket; }
+\DoxyCodeLine{20 \textcolor{keyword}{public}:}
+\DoxyCodeLine{24     \mbox{\hyperlink{classPlayerInfo_a05e9b9529ed8e4638b2bd2fb76b3abeb}{PlayerInfo}}();}
+\DoxyCodeLine{29     \textcolor{keywordtype}{int} \mbox{\hyperlink{classPlayerInfo_a374ccbff75bab08aeed31414d90b27f1}{getSocketId}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} \mbox{\hyperlink{classPlayerInfo_a114835061981731793b050c6ef75945a}{setSocketId}}(\textcolor{keywordtype}{int} socketId);}
+\DoxyCodeLine{39     \textcolor{keywordtype}{int} \mbox{\hyperlink{classPlayerInfo_ac5bb2bf41bf64b90df5dc5bbd8909074}{getPointsGained}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} \mbox{\hyperlink{classPlayerInfo_a6306de8303131a1f44246b52825119ce}{setPointsGained}}(\textcolor{keywordtype}{int} pointGained);}
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} *\mbox{\hyperlink{classPlayerInfo_a75b0634daef5de02bb100c5360fc2aed}{getGameInfo}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} \mbox{\hyperlink{classPlayerInfo_af556184c48c01980afcdbd90dfaef39e}{setGameInfo}}(\textcolor{keywordtype}{void} *gameInfo);}
+\DoxyCodeLine{59     PlayerBar *\mbox{\hyperlink{classPlayerInfo_a0fe5dc939933b02ad556c4c84f6bc863}{getPlayerBar}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{64     \mbox{\hyperlink{classSocket}{Socket}} *\mbox{\hyperlink{classPlayerInfo_a51b3274b7435614b271820b10345e35e}{getSocket}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{69     \textcolor{keywordtype}{void} \mbox{\hyperlink{classPlayerInfo_ada4cefa574adfa9ae1ff27d201b00e61}{setSocket}}(\mbox{\hyperlink{classSocket}{Socket}} *socket);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//DATOSII\_PROYECTOI\_SERVER\_PLAYERINFO\_H}}
+
+\end{DoxyCode}

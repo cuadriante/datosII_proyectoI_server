@@ -1,0 +1,50 @@
+\hypertarget{Socket_8h_source}{}\doxysection{Socket.\+h}
+\label{Socket_8h_source}\index{Headers/Socket.h@{Headers/Socket.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by cuadriante on 2/9/21.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef DATOSII\_PROYECTOI\_SERVER\_SOCKET\_H}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define DATOSII\_PROYECTOI\_SERVER\_SOCKET\_H}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <sys/socket.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <sys/types.h>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <netdb.h>} \textcolor{comment}{//librerias para red}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <pthread.h>} \textcolor{comment}{// threads for multiprogramming}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <vector>} \textcolor{comment}{//para almacenar varios clientes}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <unistd.h>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <boost/property\_tree/ptree.hpp>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <boost/property\_tree//json\_parser.hpp>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include "{}Command.h"{}}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{23 \textcolor{keyword}{using} boost::property\_tree::ptree;}
+\DoxyCodeLine{24 \textcolor{keyword}{using} boost::property\_tree::read\_json;}
+\DoxyCodeLine{25 \textcolor{keyword}{using} boost::property\_tree::write\_json;}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{classSocket}{Socket}} \{}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{private}:}
+\DoxyCodeLine{30     \textcolor{keywordtype}{int} socketId; }
+\DoxyCodeLine{31     \textcolor{keywordtype}{string} buffer; }
+\DoxyCodeLine{32     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} bufferSize = 1024; }
+\DoxyCodeLine{34 \textcolor{keyword}{public}:}
+\DoxyCodeLine{39     \mbox{\hyperlink{classSocket_a6ebf9e5bb40310c76bf813a959b251bf}{Socket}}(\textcolor{keywordtype}{int} socketId);}
+\DoxyCodeLine{44     \textcolor{keywordtype}{string} \mbox{\hyperlink{classSocket_aef63194f6841603413389d2aeff64455}{readMessage}}();}
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} \mbox{\hyperlink{classSocket_a6f17bae4398de7a7ab02b39e0a338bb1}{sendMessage}}(\textcolor{keywordtype}{string} message);}
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} \mbox{\hyperlink{classSocket_a722f7979278b3500bb56525dc43e230d}{sendPtree}}(ptree * ptree);}
+\DoxyCodeLine{59     ptree * \mbox{\hyperlink{classSocket_a92fa4c1ebed5c1af04fa188a4e5184e0}{readPtree}}();}
+\DoxyCodeLine{64     \textcolor{keywordtype}{void} \mbox{\hyperlink{classSocket_a23fb1e36940d84b70992802822623e7c}{sendCommand}}(\mbox{\hyperlink{classCommand}{Command}} \&command);}
+\DoxyCodeLine{69     \mbox{\hyperlink{classCommand}{Command}} *\mbox{\hyperlink{classSocket_a4309be3866a7f56a43caf0a5879dca0f}{readCommand}}();}
+\DoxyCodeLine{70 \};}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//DATOSII\_PROYECTOI\_SERVER\_SOCKET\_H}}
+
+\end{DoxyCode}

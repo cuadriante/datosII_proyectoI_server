@@ -1,0 +1,115 @@
+\hypertarget{classSocket}{}\doxysection{Socket Class Reference}
+\label{classSocket}\index{Socket@{Socket}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSocket_a6ebf9e5bb40310c76bf813a959b251bf}{Socket}} (int socket\+Id)
+\item 
+string \mbox{\hyperlink{classSocket_aef63194f6841603413389d2aeff64455}{read\+Message}} ()
+\item 
+void \mbox{\hyperlink{classSocket_a6f17bae4398de7a7ab02b39e0a338bb1}{send\+Message}} (string message)
+\item 
+void \mbox{\hyperlink{classSocket_a722f7979278b3500bb56525dc43e230d}{send\+Ptree}} (ptree $\ast$ptree)
+\item 
+ptree $\ast$ \mbox{\hyperlink{classSocket_a92fa4c1ebed5c1af04fa188a4e5184e0}{read\+Ptree}} ()
+\item 
+void \mbox{\hyperlink{classSocket_a23fb1e36940d84b70992802822623e7c}{send\+Command}} (\mbox{\hyperlink{classCommand}{Command}} \&command)
+\item 
+\mbox{\hyperlink{classCommand}{Command}} $\ast$ \mbox{\hyperlink{classSocket_a4309be3866a7f56a43caf0a5879dca0f}{read\+Command}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSocket_a6ebf9e5bb40310c76bf813a959b251bf}\label{classSocket_a6ebf9e5bb40310c76bf813a959b251bf}} 
+\index{Socket@{Socket}!Socket@{Socket}}
+\index{Socket@{Socket}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{Socket()}{Socket()}}
+{\footnotesize\ttfamily Socket\+::\+Socket (\begin{DoxyParamCaption}\item[{int}]{socket\+Id }\end{DoxyParamCaption})}
+
+Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em socket\+Id} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSocket_a4309be3866a7f56a43caf0a5879dca0f}\label{classSocket_a4309be3866a7f56a43caf0a5879dca0f}} 
+\index{Socket@{Socket}!readCommand@{readCommand}}
+\index{readCommand@{readCommand}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{readCommand()}{readCommand()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCommand}{Command}} $\ast$ Socket\+::read\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Reads command from server.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSocket_aef63194f6841603413389d2aeff64455}\label{classSocket_aef63194f6841603413389d2aeff64455}} 
+\index{Socket@{Socket}!readMessage@{readMessage}}
+\index{readMessage@{readMessage}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{readMessage()}{readMessage()}}
+{\footnotesize\ttfamily string Socket\+::read\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Reads json message coming from server.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSocket_a92fa4c1ebed5c1af04fa188a4e5184e0}\label{classSocket_a92fa4c1ebed5c1af04fa188a4e5184e0}} 
+\index{Socket@{Socket}!readPtree@{readPtree}}
+\index{readPtree@{readPtree}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{readPtree()}{readPtree()}}
+{\footnotesize\ttfamily ptree $\ast$ Socket\+::read\+Ptree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Reads Ptree object.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSocket_a23fb1e36940d84b70992802822623e7c}\label{classSocket_a23fb1e36940d84b70992802822623e7c}} 
+\index{Socket@{Socket}!sendCommand@{sendCommand}}
+\index{sendCommand@{sendCommand}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{sendCommand()}{sendCommand()}}
+{\footnotesize\ttfamily void Socket\+::send\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCommand}{Command}} \&}]{command }\end{DoxyParamCaption})}
+
+Sends command to server.
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSocket_a6f17bae4398de7a7ab02b39e0a338bb1}\label{classSocket_a6f17bae4398de7a7ab02b39e0a338bb1}} 
+\index{Socket@{Socket}!sendMessage@{sendMessage}}
+\index{sendMessage@{sendMessage}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{sendMessage()}{sendMessage()}}
+{\footnotesize\ttfamily void Socket\+::send\+Message (\begin{DoxyParamCaption}\item[{string}]{message }\end{DoxyParamCaption})}
+
+Sends message to server.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSocket_a722f7979278b3500bb56525dc43e230d}\label{classSocket_a722f7979278b3500bb56525dc43e230d}} 
+\index{Socket@{Socket}!sendPtree@{sendPtree}}
+\index{sendPtree@{sendPtree}!Socket@{Socket}}
+\doxysubsubsection{\texorpdfstring{sendPtree()}{sendPtree()}}
+{\footnotesize\ttfamily void Socket\+::send\+Ptree (\begin{DoxyParamCaption}\item[{ptree $\ast$}]{ptree }\end{DoxyParamCaption})}
+
+Send Ptree object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptree} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Headers/Socket.\+h\end{DoxyCompactItemize}
