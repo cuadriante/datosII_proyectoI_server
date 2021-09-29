@@ -5,19 +5,32 @@
 #ifndef DATOSII_PROYECTOI_SERVER_GAMEMODESETTINGS_H
 #define DATOSII_PROYECTOI_SERVER_GAMEMODESETTINGS_H
 
+/** @brief GameModeSettings class used for storing game mode information.
+
+    @author cuadriante
+    @date September 2021
+    */
 
 #include "../Command.h"
 #include "../Breakout/GameInfo.h"
 
 class GameModeSettings {
 private:
-    GameInfo * gameInfo;
+    GameInfo * gameInfo; /**<initial gameInfo*/
 public:
+    /** Constructor.
+     *
+     * @param gameInfo
+     */
     GameModeSettings(GameInfo * gameInfo);
+    /** Sends gained points to client.
+     *
+     * @param type
+     */
     void sendPointsGained(int type);
-
-    void checkBlockCollision(Ball *ball);
-
+    /** Sets surprise when surprise block is deleted.
+     *
+     */
     void createSurprise();
 };
 

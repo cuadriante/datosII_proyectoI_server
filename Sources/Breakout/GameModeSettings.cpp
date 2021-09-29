@@ -2,8 +2,11 @@
 // Created by cuadriante on 29/9/21.
 //
 
-
 #include "../../Headers/Breakout/GameModeSettings.h"
+
+GameModeSettings::GameModeSettings(GameInfo *gameInfo) {
+    this->gameInfo = gameInfo;
+}
 
 void GameModeSettings::sendPointsGained(int type) {
     int pointsGained;
@@ -46,12 +49,6 @@ void GameModeSettings::sendPointsGained(int type) {
         playerInfo->getSocket()->sendCommand(cmd);
     }
 }
-
-GameModeSettings::GameModeSettings(GameInfo *gameInfo) {
-    this->gameInfo = gameInfo;
-}
-
-
 
 void GameModeSettings::createSurprise() {
     int surprise = rand() % 5 + 1;

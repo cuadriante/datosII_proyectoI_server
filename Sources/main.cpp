@@ -4,7 +4,6 @@
 #include "../Headers/Breakout/GameLoop.h"
 
 
-
 int main() {
 
     GameInfo *gameInfo = new GameInfo();
