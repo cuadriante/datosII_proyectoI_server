@@ -32,6 +32,7 @@ public:
     static const int ACTION_CREATE_BLOCK = 16; /**<action for block creation*/
     static const int ACTION_SET_DEPTH_LEVEL = 17; /**<action for depth level setting*/
     static const int ACTION_SET_PLAYER_BAR_SIZE = 18; /**<action for player bar size  setting*/
+    static const int ACTION_MOVE_OTHER_PLAYER = 19; /**<action for other player movement setting*/
     // to server
     static const int ACTION_START_GAME = 20; /**<action for game start*/
     static const int ACTION_MOVE_LEFT = 21; /**<action for player movement to the left*/

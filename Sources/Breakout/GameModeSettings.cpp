@@ -106,7 +106,8 @@ void GameModeSettings::createSurprise() {
             break;
         }
         case 5: { //tbd
-            cout << "OTHER SURPRISE" << endl;
+            cout << "CHANGE DEPTH LEVEL TO 0" << endl;
+            gameInfo->setDepthLevel(0);
             break;
         }
     }

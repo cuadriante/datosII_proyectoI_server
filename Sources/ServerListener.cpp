@@ -98,6 +98,7 @@ bool ServerListener::start() {
                         c.setPosX(b->getPosX());
                         c.setPosY(b->getPosY());
                         c.setType(b->getType());
+                        c.setSize(b->getHitsToBreak());
                         socket->sendCommand(c);
                     }
                     Command c;
@@ -123,14 +124,19 @@ bool ServerListener::start() {
                     }
                     playerInfo->getPlayerBar()->setPosX(x);
                     playerInfo->getPlayerBar()->setPosY(y);
-                    //cout << "Client moved to x: " << x << " y: " << y << endl;
-                    //todo: send new pos to all clients except one
-//                    Command c;
-//                    c.setAction(c.ACTION_MOVE_PLAYER);
-//                    c.setPosX(x);
-//                    c.setPosY(y);
-//                    c.setSize(playerInfo->getPlayerBar()->getSize());
-//                    socket.sendCommand(c);
+                    int id = 0;
+                    for (PlayerInfo * otherPlayer: gameInfo->getPlayerList()){
+                        if (otherPlayer != playerInfo){
+                            Command c;
+                            c.setAction(c.ACTION_MOVE_OTHER_PLAYER);
+                            c.setPosX(x);
+                            c.setPosY(y);
+                            c.setId(id);
+                            c.setSize(otherPlayer->getPlayerBar()->getSize());
+                            otherPlayer->getSocket()->sendCommand(c);
+                        }
+                        id ++;
+                    }
                     break;
                 }
             }

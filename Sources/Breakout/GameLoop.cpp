@@ -60,7 +60,16 @@ long GameLoop::currentTimeInMillis() {
 }
 
 void GameLoop::checkBlockCollision(GameModeSettings gameModeSettings, GameInfo * gameInfo, Ball *ball) {
+    int ignoreBlocksAfter = 60 - gameInfo->getDepthLevel() * 5;
+    int currentBlockId = 0;
+//    if (ignoreBlocksAfter <= 0){
+//        ignoreBlocksAfter = 12;
+//    }
     for (Block *block: gameInfo->getBlockList()) {
+        if (currentBlockId >= ignoreBlocksAfter && block->getType() != Command::BLOCK_TYPE_DEEP){
+            currentBlockId ++;
+            continue;
+        }
         if (block->getHitsToBreak() > 0 &&
             collide(block->getPosX(), block->getPosX() + 100, block->getPosY(),
                     block->getPosY() + 25, ball->getX(),
@@ -80,6 +89,9 @@ void GameLoop::checkBlockCollision(GameModeSettings gameModeSettings, GameInfo *
             if (block->getType() == Command::BLOCK_TYPE_DEEP) {
                 int currentDepthLevel = gameInfo->getDepthLevel();
                 gameInfo->setDepthLevel(currentDepthLevel + 1);
+                if (gameInfo->getDepthLevel() >= 13){
+                    gameInfo->setDepthLevel(0);
+                }
                 Command cmd;
                 cmd.setAction(cmd.ACTION_SET_DEPTH_LEVEL);
                 cmd.setSize(gameInfo->getDepthLevel());
@@ -103,6 +115,7 @@ void GameLoop::checkBlockCollision(GameModeSettings gameModeSettings, GameInfo *
 
             }
         }
+        currentBlockId ++;
     }
 }
 
