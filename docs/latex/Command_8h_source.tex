@@ -29,43 +29,44 @@
 \DoxyCodeLine{32     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_a7ab4fb74a8d1c4852166c7e0c18eb81d}{ACTION\_CREATE\_BLOCK}} = 16; }
 \DoxyCodeLine{33     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_a567caf569156379277f22c954fbee065}{ACTION\_SET\_DEPTH\_LEVEL}} = 17; }
 \DoxyCodeLine{34     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_ad0b35b3408dd5a3eec841cdc1f9d5f15}{ACTION\_SET\_PLAYER\_BAR\_SIZE}} = 18; }
-\DoxyCodeLine{35     \textcolor{comment}{// to server}}
-\DoxyCodeLine{36     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_aee33de69f704679c7f7b6a6b1c52e24d}{ACTION\_START\_GAME}} = 20; }
-\DoxyCodeLine{37     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_a3d846d3d89f911b1a716d676b849eb2a}{ACTION\_MOVE\_LEFT}} = 21; }
-\DoxyCodeLine{38     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_ac7c7e7fecf78684e4fd709118e4cab14}{ACTION\_MOVE\_RIGHT}} = 22; }
-\DoxyCodeLine{39     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_a45c67e378ca20767cc28819d9753d9ff}{ACTION\_END\_GAME}} = 23; }
-\DoxyCodeLine{40     \textcolor{comment}{// block types}}
-\DoxyCodeLine{41     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_a322d732c31e18d1949af06fc39a57797}{BLOCK\_TYPE\_COMMON}} = 31; }
-\DoxyCodeLine{42     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_ad3315bedc7fa5a73edf3f54c1b5da7d4}{BLOCK\_TYPE\_DOUBLE}} = 32; }
-\DoxyCodeLine{43     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_a27b5cf7fb83aebffe6150e1975327e47}{BLOCK\_TYPE\_TRIPLE}} = 33; }
-\DoxyCodeLine{44     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_a3f023dfbb5d271014f2a8111ce5ca43d}{BLOCK\_TYPE\_INTERNAL}} = 34; }
-\DoxyCodeLine{45     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_a9f0c337350dc90045c6432cffbb8216c}{BLOCK\_TYPE\_DEEP}} = 35; }
-\DoxyCodeLine{46     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_a21d7a529d1d6316289b672a39c9137f0}{BLOCK\_TYPE\_SURPRISE}} = 36; }
-\DoxyCodeLine{52     \textcolor{keywordtype}{void} \mbox{\hyperlink{classCommand_a9339c08af15bb3542d7d64e5a74851f8}{setAction}}(\textcolor{keywordtype}{int} action);}
-\DoxyCodeLine{57     \textcolor{keywordtype}{void} \mbox{\hyperlink{classCommand_aa9881397ea18df908d318692b8840c52}{setPosX}}(\textcolor{keywordtype}{int} newPlayerX);}
-\DoxyCodeLine{62     \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_a4e77116d5c358139ebbf50177e0e657b}{getAction}}();}
-\DoxyCodeLine{67     \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_a5f03b9d21ddc05695f29f9ccdd009818}{getPosX}}();}
-\DoxyCodeLine{72     \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_ab8e32706a7070054d419934d6a7939fa}{getType}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{77     \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_aa3b459f6bd217716c7f3317be349e1e5}{getPosY}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{82     \textcolor{keywordtype}{void} \mbox{\hyperlink{classCommand_af38de7c5f6f85e3ed315e47f09132313}{setPosY}}(\textcolor{keywordtype}{int} posY);}
-\DoxyCodeLine{87     \textcolor{keywordtype}{void} \mbox{\hyperlink{classCommand_af74dc8726b3627196ed6ee05f942df6d}{setType}}(\textcolor{keywordtype}{int} type);}
-\DoxyCodeLine{92     \textcolor{keyword}{const} \textcolor{keywordtype}{string} \&\mbox{\hyperlink{classCommand_af929824b031834ee5e059e13b6d676a5}{getName}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{97     \textcolor{keywordtype}{void} \mbox{\hyperlink{classCommand_a5d09cb1f6182cf904f43103252c5ecff}{setName}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \&name);}
-\DoxyCodeLine{102     \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_a72aa21892c91bf154a9d444fd0af8172}{getSize}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{107     \textcolor{keywordtype}{void} \mbox{\hyperlink{classCommand_a7e445f61fb2fa739147661c19e6ecc03}{setSize}}(\textcolor{keywordtype}{int} size);}
-\DoxyCodeLine{112     \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_a977db092ca31a9581bc6d26b403cf52c}{getId}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{117     \textcolor{keywordtype}{void} \mbox{\hyperlink{classCommand_a2376d7e6bf082d184a23ca4c511996fd}{setId}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id});}
-\DoxyCodeLine{118 }
-\DoxyCodeLine{119 \textcolor{keyword}{private}:}
-\DoxyCodeLine{120     \textcolor{keywordtype}{int} id; }
-\DoxyCodeLine{121     \textcolor{keywordtype}{int} action; }
-\DoxyCodeLine{122     \textcolor{keywordtype}{int} posX; }
-\DoxyCodeLine{123     \textcolor{keywordtype}{int} posY; }
-\DoxyCodeLine{124     \textcolor{keywordtype}{string} name; }
-\DoxyCodeLine{125     \textcolor{keywordtype}{int} type; }
-\DoxyCodeLine{126     \textcolor{keywordtype}{int} size; }
-\DoxyCodeLine{128 \};}
-\DoxyCodeLine{129 }
-\DoxyCodeLine{130 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//DATOSII\_PROYECTOI\_SERVER\_COMMAND\_H}}
+\DoxyCodeLine{35     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_a48c59acedb1bbee8d453f42fdee0c022}{ACTION\_MOVE\_OTHER\_PLAYER}} = 19; }
+\DoxyCodeLine{36     \textcolor{comment}{// to server}}
+\DoxyCodeLine{37     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_aee33de69f704679c7f7b6a6b1c52e24d}{ACTION\_START\_GAME}} = 20; }
+\DoxyCodeLine{38     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_a3d846d3d89f911b1a716d676b849eb2a}{ACTION\_MOVE\_LEFT}} = 21; }
+\DoxyCodeLine{39     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_ac7c7e7fecf78684e4fd709118e4cab14}{ACTION\_MOVE\_RIGHT}} = 22; }
+\DoxyCodeLine{40     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_a45c67e378ca20767cc28819d9753d9ff}{ACTION\_END\_GAME}} = 23; }
+\DoxyCodeLine{41     \textcolor{comment}{// block types}}
+\DoxyCodeLine{42     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_a322d732c31e18d1949af06fc39a57797}{BLOCK\_TYPE\_COMMON}} = 31; }
+\DoxyCodeLine{43     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_ad3315bedc7fa5a73edf3f54c1b5da7d4}{BLOCK\_TYPE\_DOUBLE}} = 32; }
+\DoxyCodeLine{44     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_a27b5cf7fb83aebffe6150e1975327e47}{BLOCK\_TYPE\_TRIPLE}} = 33; }
+\DoxyCodeLine{45     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_a3f023dfbb5d271014f2a8111ce5ca43d}{BLOCK\_TYPE\_INTERNAL}} = 34; }
+\DoxyCodeLine{46     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_a9f0c337350dc90045c6432cffbb8216c}{BLOCK\_TYPE\_DEEP}} = 35; }
+\DoxyCodeLine{47     \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_a21d7a529d1d6316289b672a39c9137f0}{BLOCK\_TYPE\_SURPRISE}} = 36; }
+\DoxyCodeLine{53     \textcolor{keywordtype}{void} \mbox{\hyperlink{classCommand_a9339c08af15bb3542d7d64e5a74851f8}{setAction}}(\textcolor{keywordtype}{int} action);}
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} \mbox{\hyperlink{classCommand_aa9881397ea18df908d318692b8840c52}{setPosX}}(\textcolor{keywordtype}{int} newPlayerX);}
+\DoxyCodeLine{63     \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_a4e77116d5c358139ebbf50177e0e657b}{getAction}}();}
+\DoxyCodeLine{68     \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_a5f03b9d21ddc05695f29f9ccdd009818}{getPosX}}();}
+\DoxyCodeLine{73     \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_ab8e32706a7070054d419934d6a7939fa}{getType}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{78     \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_aa3b459f6bd217716c7f3317be349e1e5}{getPosY}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{83     \textcolor{keywordtype}{void} \mbox{\hyperlink{classCommand_af38de7c5f6f85e3ed315e47f09132313}{setPosY}}(\textcolor{keywordtype}{int} posY);}
+\DoxyCodeLine{88     \textcolor{keywordtype}{void} \mbox{\hyperlink{classCommand_af74dc8726b3627196ed6ee05f942df6d}{setType}}(\textcolor{keywordtype}{int} type);}
+\DoxyCodeLine{93     \textcolor{keyword}{const} \textcolor{keywordtype}{string} \&\mbox{\hyperlink{classCommand_af929824b031834ee5e059e13b6d676a5}{getName}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{98     \textcolor{keywordtype}{void} \mbox{\hyperlink{classCommand_a5d09cb1f6182cf904f43103252c5ecff}{setName}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \&name);}
+\DoxyCodeLine{103     \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_a72aa21892c91bf154a9d444fd0af8172}{getSize}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{108     \textcolor{keywordtype}{void} \mbox{\hyperlink{classCommand_a7e445f61fb2fa739147661c19e6ecc03}{setSize}}(\textcolor{keywordtype}{int} size);}
+\DoxyCodeLine{113     \textcolor{keywordtype}{int} \mbox{\hyperlink{classCommand_a977db092ca31a9581bc6d26b403cf52c}{getId}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{118     \textcolor{keywordtype}{void} \mbox{\hyperlink{classCommand_a2376d7e6bf082d184a23ca4c511996fd}{setId}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 \textcolor{keyword}{private}:}
+\DoxyCodeLine{121     \textcolor{keywordtype}{int} id; }
+\DoxyCodeLine{122     \textcolor{keywordtype}{int} action; }
+\DoxyCodeLine{123     \textcolor{keywordtype}{int} posX; }
+\DoxyCodeLine{124     \textcolor{keywordtype}{int} posY; }
+\DoxyCodeLine{125     \textcolor{keywordtype}{string} name; }
+\DoxyCodeLine{126     \textcolor{keywordtype}{int} type; }
+\DoxyCodeLine{127     \textcolor{keywordtype}{int} size; }
+\DoxyCodeLine{129 \};}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//DATOSII\_PROYECTOI\_SERVER\_COMMAND\_H}}
 
 \end{DoxyCode}

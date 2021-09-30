@@ -1,0 +1,31 @@
+\hypertarget{GameLoop_8h_source}{}\doxysection{Game\+Loop.\+h}
+\label{GameLoop_8h_source}\index{Headers/Breakout/GameLoop.h@{Headers/Breakout/GameLoop.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//}}
+\DoxyCodeLine{2 \textcolor{comment}{// Created by cuadriante on 29/9/21.}}
+\DoxyCodeLine{3 \textcolor{comment}{//}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef DATOSII\_PROYECTOI\_SERVER\_GAMELOOP\_H}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define DATOSII\_PROYECTOI\_SERVER\_GAMELOOP\_H}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}GameModeSettings.h"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}GameInfo.h"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{classGameLoop}{GameLoop}} \{}
+\DoxyCodeLine{18 \textcolor{keyword}{private}:}
+\DoxyCodeLine{19     \mbox{\hyperlink{classGameInfo}{GameInfo}} * gameInfo; }
+\DoxyCodeLine{20 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25     \mbox{\hyperlink{classGameLoop_a3421b33cd1f7ebebbf7014605873e6f2}{GameLoop}}(\mbox{\hyperlink{classGameInfo}{GameInfo}} *gameInfo);}
+\DoxyCodeLine{36     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classGameLoop_a4645e2c01f710db1e9ba5b016f616dca}{collide}}(\textcolor{keywordtype}{int} x1, \textcolor{keywordtype}{int} x2, \textcolor{keywordtype}{int} y1, \textcolor{keywordtype}{int} y2, \textcolor{keywordtype}{int} w, \textcolor{keywordtype}{int} z);}
+\DoxyCodeLine{42     [[noreturn]] \textcolor{keyword}{static} \textcolor{keywordtype}{void} *\mbox{\hyperlink{classGameLoop_a9df8a6dcd255e762c9b9121703682a46}{gameLoop}}(\textcolor{keywordtype}{void} *pgame);}
+\DoxyCodeLine{47     \textcolor{keyword}{static} \textcolor{keywordtype}{long} \mbox{\hyperlink{classGameLoop_ab5fb7b4a1d511bd7fc14bb6b0edd8c47}{currentTimeInMillis}}();}
+\DoxyCodeLine{52     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGameLoop_a8f834ee3cb173bf4a4c572a092daf591}{checkBlockCollision}}(\mbox{\hyperlink{classGameModeSettings}{GameModeSettings}} gameModeSettings, \mbox{\hyperlink{classGameInfo}{GameInfo}} *gameInfo, \mbox{\hyperlink{classBall}{Ball}} *ball);}
+\DoxyCodeLine{58     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGameLoop_a5e9c388c363aeac4d7488efbdd54f999}{checkPlayerBarCollision}}(\textcolor{keyword}{const} \mbox{\hyperlink{classGameInfo}{GameInfo}} *gameInfo, \mbox{\hyperlink{classBall}{Ball}} *ball);}
+\DoxyCodeLine{63     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classGameLoop_a0911eb2552e97d1f92a422a6cc79e102}{checkForBallOutOfBounds}}(\mbox{\hyperlink{classBall}{Ball}} *ball);}
+\DoxyCodeLine{64 \};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//DATOSII\_PROYECTOI\_SERVER\_GAMELOOP\_H}}
+
+\end{DoxyCode}

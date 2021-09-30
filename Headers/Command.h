@@ -4,6 +4,7 @@
 
 /** @brief Command class used for communication between server and socket.
 
+    Sets methods and constants necessary for communication between server and socket.
     @author cuadriante
     @date September 2021
     */

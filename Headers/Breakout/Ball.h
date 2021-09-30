@@ -4,6 +4,7 @@
 
 /** @brief Ball class used for gathering ball information.
 
+    Gathers information about ball in game.
     @author cuadriante
     @date September 2021
     */

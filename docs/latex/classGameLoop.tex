@@ -1,0 +1,160 @@
+\hypertarget{classGameLoop}{}\doxysection{Game\+Loop Class Reference}
+\label{classGameLoop}\index{GameLoop@{GameLoop}}
+
+
+\mbox{\hyperlink{classGameLoop}{Game\+Loop}} class used for thread implementation.  
+
+
+
+
+{\ttfamily \#include $<$Game\+Loop.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGameLoop_a3421b33cd1f7ebebbf7014605873e6f2}{Game\+Loop}} (\mbox{\hyperlink{classGameInfo}{Game\+Info}} $\ast$game\+Info)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classGameLoop_a4645e2c01f710db1e9ba5b016f616dca}{collide}} (int x1, int x2, int y1, int y2, int w, int z)
+\item 
+static void $\ast$ \mbox{\hyperlink{classGameLoop_a9df8a6dcd255e762c9b9121703682a46}{game\+Loop}} (void $\ast$pgame)
+\item 
+static long \mbox{\hyperlink{classGameLoop_ab5fb7b4a1d511bd7fc14bb6b0edd8c47}{current\+Time\+In\+Millis}} ()
+\item 
+static void \mbox{\hyperlink{classGameLoop_a8f834ee3cb173bf4a4c572a092daf591}{check\+Block\+Collision}} (\mbox{\hyperlink{classGameModeSettings}{Game\+Mode\+Settings}} game\+Mode\+Settings, \mbox{\hyperlink{classGameInfo}{Game\+Info}} $\ast$game\+Info, \mbox{\hyperlink{classBall}{Ball}} $\ast$ball)
+\item 
+static void \mbox{\hyperlink{classGameLoop_a5e9c388c363aeac4d7488efbdd54f999}{check\+Player\+Bar\+Collision}} (const \mbox{\hyperlink{classGameInfo}{Game\+Info}} $\ast$game\+Info, \mbox{\hyperlink{classBall}{Ball}} $\ast$ball)
+\item 
+static void \mbox{\hyperlink{classGameLoop_a0911eb2552e97d1f92a422a6cc79e102}{check\+For\+Ball\+Out\+Of\+Bounds}} (\mbox{\hyperlink{classBall}{Ball}} $\ast$ball)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classGameLoop}{Game\+Loop}} class used for thread implementation. 
+
+\begin{DoxyAuthor}{Author}
+cuadriante 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+September 2021 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGameLoop_a3421b33cd1f7ebebbf7014605873e6f2}\label{classGameLoop_a3421b33cd1f7ebebbf7014605873e6f2}} 
+\index{GameLoop@{GameLoop}!GameLoop@{GameLoop}}
+\index{GameLoop@{GameLoop}!GameLoop@{GameLoop}}
+\doxysubsubsection{\texorpdfstring{GameLoop()}{GameLoop()}}
+{\footnotesize\ttfamily Game\+Loop\+::\+Game\+Loop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGameInfo}{Game\+Info}} $\ast$}]{game\+Info }\end{DoxyParamCaption})}
+
+Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Info} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameLoop_a8f834ee3cb173bf4a4c572a092daf591}\label{classGameLoop_a8f834ee3cb173bf4a4c572a092daf591}} 
+\index{GameLoop@{GameLoop}!checkBlockCollision@{checkBlockCollision}}
+\index{checkBlockCollision@{checkBlockCollision}!GameLoop@{GameLoop}}
+\doxysubsubsection{\texorpdfstring{checkBlockCollision()}{checkBlockCollision()}}
+{\footnotesize\ttfamily static void Game\+Loop\+::check\+Block\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classGameModeSettings}{Game\+Mode\+Settings}}}]{game\+Mode\+Settings,  }\item[{\mbox{\hyperlink{classGameInfo}{Game\+Info}} $\ast$}]{game\+Info,  }\item[{\mbox{\hyperlink{classBall}{Ball}} $\ast$}]{ball }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Checks ball collision with blocks.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ball} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameLoop_a0911eb2552e97d1f92a422a6cc79e102}\label{classGameLoop_a0911eb2552e97d1f92a422a6cc79e102}} 
+\index{GameLoop@{GameLoop}!checkForBallOutOfBounds@{checkForBallOutOfBounds}}
+\index{checkForBallOutOfBounds@{checkForBallOutOfBounds}!GameLoop@{GameLoop}}
+\doxysubsubsection{\texorpdfstring{checkForBallOutOfBounds()}{checkForBallOutOfBounds()}}
+{\footnotesize\ttfamily static void Game\+Loop\+::check\+For\+Ball\+Out\+Of\+Bounds (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBall}{Ball}} $\ast$}]{ball }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Checks for ball out of bounds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ball} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameLoop_a5e9c388c363aeac4d7488efbdd54f999}\label{classGameLoop_a5e9c388c363aeac4d7488efbdd54f999}} 
+\index{GameLoop@{GameLoop}!checkPlayerBarCollision@{checkPlayerBarCollision}}
+\index{checkPlayerBarCollision@{checkPlayerBarCollision}!GameLoop@{GameLoop}}
+\doxysubsubsection{\texorpdfstring{checkPlayerBarCollision()}{checkPlayerBarCollision()}}
+{\footnotesize\ttfamily static void Game\+Loop\+::check\+Player\+Bar\+Collision (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classGameInfo}{Game\+Info}} $\ast$}]{game\+Info,  }\item[{\mbox{\hyperlink{classBall}{Ball}} $\ast$}]{ball }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Checks ball collision with player bar.
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Info} & \\
+\hline
+{\em ball} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGameLoop_a4645e2c01f710db1e9ba5b016f616dca}\label{classGameLoop_a4645e2c01f710db1e9ba5b016f616dca}} 
+\index{GameLoop@{GameLoop}!collide@{collide}}
+\index{collide@{collide}!GameLoop@{GameLoop}}
+\doxysubsubsection{\texorpdfstring{collide()}{collide()}}
+{\footnotesize\ttfamily static bool Game\+Loop\+::collide (\begin{DoxyParamCaption}\item[{int}]{x1,  }\item[{int}]{x2,  }\item[{int}]{y1,  }\item[{int}]{y2,  }\item[{int}]{w,  }\item[{int}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Checks for collision with given parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x1} & \\
+\hline
+{\em x2} & \\
+\hline
+{\em y1} & \\
+\hline
+{\em y2} & \\
+\hline
+{\em w} & \\
+\hline
+{\em z} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLoop_ab5fb7b4a1d511bd7fc14bb6b0edd8c47}\label{classGameLoop_ab5fb7b4a1d511bd7fc14bb6b0edd8c47}} 
+\index{GameLoop@{GameLoop}!currentTimeInMillis@{currentTimeInMillis}}
+\index{currentTimeInMillis@{currentTimeInMillis}!GameLoop@{GameLoop}}
+\doxysubsubsection{\texorpdfstring{currentTimeInMillis()}{currentTimeInMillis()}}
+{\footnotesize\ttfamily static long Game\+Loop\+::current\+Time\+In\+Millis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns current time in milliseconds.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGameLoop_a9df8a6dcd255e762c9b9121703682a46}\label{classGameLoop_a9df8a6dcd255e762c9b9121703682a46}} 
+\index{GameLoop@{GameLoop}!gameLoop@{gameLoop}}
+\index{gameLoop@{gameLoop}!GameLoop@{GameLoop}}
+\doxysubsubsection{\texorpdfstring{gameLoop()}{gameLoop()}}
+{\footnotesize\ttfamily static void $\ast$ Game\+Loop\+::game\+Loop (\begin{DoxyParamCaption}\item[{void $\ast$}]{pgame }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Continuous loop for game movement.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pgame} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Headers/\+Breakout/Game\+Loop.\+h\end{DoxyCompactItemize}

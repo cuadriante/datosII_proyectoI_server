@@ -4,6 +4,7 @@
 
 /** @brief ServerListener class used for sending messages to socket.
 
+    Starts server and listens for messages coming from clients.
     @author cuadriante
     @date September 2021
     */

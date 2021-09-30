@@ -4,6 +4,7 @@
 
 /** @brief Socket class used for communication within socket.
 
+    Handles sending and receiving messages to and from socket.
     @author cuadriante
     @date September 2021
     */

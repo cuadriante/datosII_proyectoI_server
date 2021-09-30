@@ -1,4 +1,28 @@
 var searchData=
 [
-  ['playerinfo_0',['PlayerInfo',['../classPlayerInfo.html#a05e9b9529ed8e4638b2bd2fb76b3abeb',1,'PlayerInfo']]]
+  ['gameinfo_0',['GameInfo',['../classGameInfo.html#ae7ded63bd69b007847bd66debaeebc23',1,'GameInfo']]],
+  ['gameloop_1',['GameLoop',['../classGameLoop.html#a3421b33cd1f7ebebbf7014605873e6f2',1,'GameLoop']]],
+  ['gameloop_2',['gameLoop',['../classGameLoop.html#a9df8a6dcd255e762c9b9121703682a46',1,'GameLoop']]],
+  ['gamemodesettings_3',['GameModeSettings',['../classGameModeSettings.html#ac81af9d90a5cb6e47d5cee5066fe75ba',1,'GameModeSettings']]],
+  ['getaction_4',['getAction',['../classCommand.html#a4e77116d5c358139ebbf50177e0e657b',1,'Command']]],
+  ['getball_5',['getBall',['../classGameInfo.html#af8d90a349b37d1286f7a43141c00f2a0',1,'GameInfo']]],
+  ['getblocklist_6',['getBlockList',['../classGameInfo.html#a4f57e66d1fe43fd4cd128305e621f706',1,'GameInfo']]],
+  ['getdepthlevel_7',['getDepthLevel',['../classGameInfo.html#a41c11e3dcc20c7a0dd74c4204fdcfa3c',1,'GameInfo']]],
+  ['getgameinfo_8',['getGameInfo',['../classPlayerInfo.html#a75b0634daef5de02bb100c5360fc2aed',1,'PlayerInfo']]],
+  ['gethitstobreak_9',['getHitsToBreak',['../classBlock.html#afc05b6fd83f8c422e5e37b38bacf47f8',1,'Block']]],
+  ['getid_10',['getId',['../classCommand.html#a977db092ca31a9581bc6d26b403cf52c',1,'Command::getId()'],['../classBlock.html#a66d1517962d349882e133bbb86faca3b',1,'Block::getId()']]],
+  ['getname_11',['getName',['../classCommand.html#af929824b031834ee5e059e13b6d676a5',1,'Command']]],
+  ['getplayerbar_12',['getPlayerBar',['../classPlayerInfo.html#a0fe5dc939933b02ad556c4c84f6bc863',1,'PlayerInfo']]],
+  ['getplayerlist_13',['getPlayerList',['../classGameInfo.html#acfa68a0ca1dff359ce2aa4f015160f68',1,'GameInfo']]],
+  ['getpointsgained_14',['getPointsGained',['../classPlayerInfo.html#ac5bb2bf41bf64b90df5dc5bbd8909074',1,'PlayerInfo']]],
+  ['getposx_15',['getPosX',['../classCommand.html#a5f03b9d21ddc05695f29f9ccdd009818',1,'Command::getPosX()'],['../classPlayerBar.html#a0b35e0fd918b008f1e5f7dd133321b0c',1,'PlayerBar::getPosX()'],['../classBlock.html#a675c2140c4b7bf7bc872afb0311285ab',1,'Block::getPosX()']]],
+  ['getposy_16',['getPosY',['../classCommand.html#aa3b459f6bd217716c7f3317be349e1e5',1,'Command::getPosY()'],['../classBlock.html#a6cac562e0a78fa94d0fb9e2e62f6f197',1,'Block::getPosY()'],['../classPlayerBar.html#af7f93df13618ef5aaacc008aa98401d7',1,'PlayerBar::getPosY()']]],
+  ['getsize_17',['getSize',['../classCommand.html#a72aa21892c91bf154a9d444fd0af8172',1,'Command::getSize()'],['../classPlayerBar.html#a6caac00d399cc80ba6c93c7d51a06286',1,'PlayerBar::getSize()']]],
+  ['getsocket_18',['getSocket',['../classPlayerInfo.html#a51b3274b7435614b271820b10345e35e',1,'PlayerInfo']]],
+  ['getsocketid_19',['getSocketId',['../classPlayerInfo.html#a374ccbff75bab08aeed31414d90b27f1',1,'PlayerInfo']]],
+  ['gettype_20',['getType',['../classCommand.html#ab8e32706a7070054d419934d6a7939fa',1,'Command::getType()'],['../classBlock.html#a08713ead505b9ba10d9351f392d308d0',1,'Block::getType()']]],
+  ['getvx_21',['getVx',['../classBall.html#a151f4a73727db0b069c4dfd19b9305e8',1,'Ball']]],
+  ['getvy_22',['getVy',['../classBall.html#a4a422b2f39edd1aa13e4145811ea3d7a',1,'Ball']]],
+  ['getx_23',['getX',['../classBall.html#a4e83a679af107ab274f07c3a828af902',1,'Ball']]],
+  ['gety_24',['getY',['../classBall.html#acab9e794905f104a7b33f3edb2c37298',1,'Ball']]]
 ];
