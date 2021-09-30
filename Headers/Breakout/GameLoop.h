@@ -60,7 +60,7 @@ public:
      *
      * @param ball
      */
-    static void checkForBallOutOfBounds(Ball *ball);
+    static void checkForBallOutOfBounds(const GameInfo *gameInfo, Ball *ball);
 };
 
 

@@ -13,8 +13,8 @@ GameInfo::GameInfo() {
     
     for (int row = 0; row < 12; row++){
         for(int col = 0; col < 5; col++){
-            //int type = 36;
-            int type = (rand() %6) + 31;
+            int type = 31;
+            //int type = (rand() %6) + 31;
             Block * block = new Block(id++, type, x, y);
             block->setHitsByType(type);
             blockList.push_back(block);
@@ -61,6 +61,14 @@ int GameInfo::getDepthLevel() const {
 
 void GameInfo::setDepthLevel(int depthLevel) {
     this->depthLevel = depthLevel;
+}
+
+int GameInfo::getVisibleBlocks() const {
+    return visibleBlocks;
+}
+
+void GameInfo::setVisibleBlocks(int visibleBlocks) {
+    GameInfo::visibleBlocks = visibleBlocks;
 }
 
 

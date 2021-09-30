@@ -39,6 +39,7 @@ public:
     static const int ACTION_MOVE_LEFT = 21; /**<action for player movement to the left*/
     static const int ACTION_MOVE_RIGHT = 22; /**<action for player movement to the right*/
     static const int ACTION_END_GAME = 23; /**<action for game end*/
+    static const int ACTION_WIN_GAME = 24; /**<action for game end when won*/
     // block types
     static const int BLOCK_TYPE_COMMON = 31; /**<action for common block*/
     static const int BLOCK_TYPE_DOUBLE = 32; /**<action for double block*/

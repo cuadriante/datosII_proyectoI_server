@@ -26,6 +26,7 @@ private:
     vector<Block *> blockList; /**<initial block list vector*/
     Ball * ball; /**<initial ball*/
     int depthLevel = 0; /**<initial depth level*/
+    int visibleBlocks = 60;
 
 public:
     /** Constructor. Initializes game in client.
@@ -70,6 +71,9 @@ public:
      */
     void setDepthLevel(int depthLevel);
 
+    int getVisibleBlocks() const;
+
+    void setVisibleBlocks(int visibleBlocks);
 
 };
 

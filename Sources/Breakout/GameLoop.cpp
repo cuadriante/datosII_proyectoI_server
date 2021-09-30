@@ -37,7 +37,7 @@ long GameLoop::currentTimeInMillis() {
         if (currentTimeInMillis() - ballLastUpdated > ballUpdateIntervalInMilli) {
 
             Ball *ball = gameInfo->getBall();
-            checkForBallOutOfBounds(ball);
+            checkForBallOutOfBounds(gameInfo, ball);
             checkBlockCollision(gameModeSettings, gameInfo, ball);
             checkPlayerBarCollision(gameInfo, ball);
 
@@ -103,14 +103,22 @@ void GameLoop::checkBlockCollision(GameModeSettings gameModeSettings, GameInfo *
             if (block->getHitsToBreak() <= 0) { //cambiar
                 int type = block->getType();
 
+                gameInfo->setVisibleBlocks(gameInfo->getVisibleBlocks()-1);
                 gameModeSettings.sendPointsGained(type);
-
                 Command c;
                 c.setAction(c.ACTION_DELETE_BLOCK);
                 c.setId(block->getId());
 
                 for (PlayerInfo *playerInfo: gameInfo->getPlayerList()) {
                     playerInfo->getSocket()->sendCommand(c);
+                }
+
+                if (gameInfo->getVisibleBlocks() <= 0){
+                    Command c2;
+                    c2.setAction(c2.ACTION_WIN_GAME);
+                    for (PlayerInfo *playerInfo: gameInfo->getPlayerList()) {
+                        playerInfo->getSocket()->sendCommand(c2);
+                    }
                 }
 
             }
@@ -133,7 +141,7 @@ void GameLoop::checkPlayerBarCollision(const GameInfo *gameInfo, Ball *ball) {
     }
 }
 
-void GameLoop::checkForBallOutOfBounds(Ball *ball) {
+void GameLoop::checkForBallOutOfBounds(const GameInfo *gameInfo, Ball *ball) {
     ball->setX(ball->getX() + ball->getVx());
     ball->setY(ball->getY() + ball->getVy());
     if (ball->getX() < 0) { // out of bounds left side
@@ -149,7 +157,17 @@ void GameLoop::checkForBallOutOfBounds(Ball *ball) {
         ball->setVy(-ball->getVy());
     }
     if (ball->getY() > 600) { // out of bounds bottom
-        ball->setY(600);
-        ball->setVy(-ball->getVy());
+        if (ball->getVy() > 0){
+            Command c;
+            c.setAction(c.ACTION_END_GAME);
+            for (PlayerInfo *playerInfo: gameInfo->getPlayerList()) {
+                //playerInfo->getSocket()->sendCommand(c);
+            }
+        }
+
+        if (gameInfo->getVisibleBlocks() <= 0) {
+            ball->setY(600);
+            ball->setVy(-ball->getVy());
+        }
     }
 }
