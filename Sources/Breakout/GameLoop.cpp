@@ -172,12 +172,12 @@ void GameLoop::checkForBallOutOfBounds(const GameInfo *gameInfo, Ball *ball) {
             Command c;
             c.setAction(c.ACTION_END_GAME);
             for (PlayerInfo *playerInfo: gameInfo->getPlayerList()) {
-                //playerInfo->getSocket()->sendCommand(c);
+                playerInfo->getSocket()->sendCommand(c);
             }
         }
 
-        ball->setY(600);
-        ball->setVy(-ball->getVy());
+        //ball->setY(600);
+        //ball->setVy(-ball->getVy());
 
         if (gameInfo->getVisibleBlocks() <= 0) {
             ball->setY(600);
