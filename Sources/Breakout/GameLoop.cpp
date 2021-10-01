@@ -113,7 +113,18 @@ void GameLoop::checkBlockCollision(GameModeSettings gameModeSettings, GameInfo *
                     playerInfo->getSocket()->sendCommand(c);
                 }
 
-                if (gameInfo->getVisibleBlocks() <= 0){
+                // win game
+
+                bool onlyDeepBlocksLeft = true;
+
+                for (Block * block: gameInfo->getBlockList()) {
+                    if (block->getType() != Command::BLOCK_TYPE_DEEP){
+                        onlyDeepBlocksLeft = false;
+                        break;
+                    }
+                }
+
+                if (gameInfo->getVisibleBlocks() <= 0 || onlyDeepBlocksLeft){
                     Command c2;
                     c2.setAction(c2.ACTION_WIN_GAME);
                     for (PlayerInfo *playerInfo: gameInfo->getPlayerList()) {
@@ -164,6 +175,9 @@ void GameLoop::checkForBallOutOfBounds(const GameInfo *gameInfo, Ball *ball) {
                 //playerInfo->getSocket()->sendCommand(c);
             }
         }
+
+        ball->setY(600);
+        ball->setVy(-ball->getVy());
 
         if (gameInfo->getVisibleBlocks() <= 0) {
             ball->setY(600);

@@ -37,7 +37,7 @@ void GameModeSettings::sendPointsGained(int type) {
             break;
         }
         case Command::BLOCK_TYPE_SURPRISE: { //surprise
-            pointsGained = 0;
+            pointsGained = 10;
             break;
         }
     }
